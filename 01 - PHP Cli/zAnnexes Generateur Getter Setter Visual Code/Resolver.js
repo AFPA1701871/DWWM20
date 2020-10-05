@@ -110,13 +110,14 @@ class Resolver {
         const spacesAfterParamVar = Array(this.config.getInt('spacesAfterParamVar', 2) + 1).join(' ');
         const spacesAfterReturn = Array(this.config.getInt('spacesAfterReturn', 2) + 1).join(' ');
         const templateFile = this.config.get('setterTemplate', 'setter.js');
-        if (this.templatesManager.exists(templateFile)) {
+        const name2 = (name.charAt(0)=="_")? name.substring(1):name;
+		if (this.templatesManager.exists(templateFile)) {
             const template = require(this.templatesManager.path(templateFile));
             return template(prop);
         }
-		if (name.charAt(0)=="_") name2=this.name.substring(1);name2=name;
+		
         return (`\n`
-            + tab + `public function ` + prop.setterName() + `(` + (typeHint ? typeHint + ` ` : ``) + `$` + name + `)\n`
+            + tab + `public function ` + prop.setterName() + `(` + (typeHint ? typeHint + ` ` : ``) + `$` + name2 + `)\n`
             + tab + `{\n`
             + tab + tab + `$this->` + name + ` = $` + name2 + `;\n`
             + tab + `}\n`);
