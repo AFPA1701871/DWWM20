@@ -9,6 +9,7 @@ class Voiture
     private $_immatriculation;
     private $_couleur;
     private $_kilometres;
+    private static $_compteur=0;
 
     /*****************Accesseurs***************** */
 
@@ -62,6 +63,16 @@ class Voiture
         $this->_kilometres = $_kilometres;
     }
 
+    /*************** Méthode static ***********************/
+    static public function getCompteur()
+    {
+        return self::$_compteur;
+    }
+
+    static public function setCompteur($compteur)
+    {
+        self::$_compteur = $compteur;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -70,6 +81,7 @@ class Voiture
         {
             $this->hydrate($options);
         }
+        self::$_compteur ++;
     }
     public function hydrate($data)
     {
@@ -111,13 +123,32 @@ class Voiture
      *        0 si ils sont égaux
      *        -1 si le 1er est <
      *
-     * @param [type] $obj1
-     * @param [type] $obj2
+     * @param Voiture $obj
      * @return void
      */
-    public static function compareTo($obj1, $obj2)
+    public function compareTo( $obj)
     {
-        return 0;
+        if ($this->getImmatriculation()>$obj->getImmatriculation())
+        {
+            return 1;
+        }
+        else if ($this->getImmatriculation()==$obj->getImmatriculation())
+        {
+            return 0;
+        }
+        return -1;
+    }
+    static public function compareToStatic( $obj1,$obj2)
+    {
+        if ($obj1->getImmatriculation()>$obj2->getImmatriculation())
+        {
+            return 1;
+        }
+        else if ($obj1->getImmatriculation()==$obj2->getImmatriculation())
+        {
+            return 0;
+        }
+        return -1;
     }
 
     public function repeindre($coul)
@@ -129,4 +160,6 @@ class Voiture
     {
         $this->setKilometres($this->getKilometres()+$km);
     }
+
+    
 }
