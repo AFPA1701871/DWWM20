@@ -51,7 +51,7 @@ function afficheTableau($tab)
     {
         echo $tab[$i]."\t";
     }
-    echo "\n";
+    // echo "\n";
 }
 /*
 Description : Affiche les éléments du tableau séparés par une tabulation // Utilisation du foreach
@@ -66,13 +66,22 @@ function afficheTableauAvecForeach($tab)
     }
     echo "\n";
 }
+/* 
+    Cette fonction permet de créer un tableau contenant des valeurs aléatoire
+ */
+function creerTableauAvecRand($tailleTableau) // Génère des valeurs aléatoire
+{
+    for ($i = 0; $i < $tailleTableau; $i++) {
+        $tab[] = rand(1, 100);
+    }
+    return $tab;
+}
 
+// $taille = demandeEntier("Entrer la taille du tableau");
+// $tableau = creerTableauAvecTaille($taille);
+// echo "1er tableau";
+// afficheTableau($tableau);
 
-$taille = demandeEntier("Entrer la taille du tableau");
-$tableau = creerTableauAvecTaille($taille);
-echo "1er tableau";
-afficheTableau($tableau);
-
-$tab2 = creerTableauTermineParZero();
-echo "2eme tableau";
-afficheTableauAvecForeach($tab2);
+// $tab2 = creerTableauTermineParZero();
+// echo "2eme tableau";
+// afficheTableauAvecForeach($tab2);
