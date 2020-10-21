@@ -29,9 +29,14 @@ SELECT `idCommande`,`idClient`,`dateCommande`,DATE_ADD(`dateCommande`,Interval 1
 k. Affichez la date et l'heure actuelles.
 SELECT now();
 l. Affichez l'ancienneté des clients.
-
+SELECT `nomClient`,floor(datediff(now(),`dateEntreeClient`)/365) as anciennete FROM `clients` order by anciennete
 m. Affichez la quantité maximale achetée par un client.
-n. Affichez la quantité totale achetée par le client1.
+SELECT Max(`quantiteCommande`) as "quantite max" FROM `commandes`
+n. Affichez la quantité totale achetée par le client2.
+SELECT SUM(`quantiteCommande`) as "somme client 2" FROM `commandes` WHERE idClient=2;
 o. Affichez la quantité moyenne achetée par le client 2.
+SELECT ROUND(AVG(`quantiteCommande`),2) as "moyenne client 2" FROM `commandes` WHERE idClient=2;
 p. Affichez les clients classés par ordre alphabétique de leur nom.
+SELECT CONCAT(`nomClient`," ",`prenomClient`) as nomDuClient FROM `clients` ORDER BY nomDuClient
 q. Affichez les articles classés selon leur prix décroissant. 
+SELECT `descriptionArticle`,`prixArticle` FROM `articles` ORDER BY `prixArticle` DESC
