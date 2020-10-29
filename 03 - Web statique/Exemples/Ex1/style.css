@@ -1,0 +1,25 @@
+body{
+    background-color: lightblue;
+}
+header, footer{
+    background-color: lightcoral;
+    margin: 20px;
+}
+div{
+    background-color: lightgreen;
+}
+#toto{
+    background-color: lime;
+    border: 10px solid black;
+}
+.bR{
+    border: red 1px solid;
+}
+.eB{
+    color: blue; 
+    border: blue 1px solid;
+}
+
+header .bR{
+    color: red;
+}

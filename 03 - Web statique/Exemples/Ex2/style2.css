@@ -1,0 +1,24 @@
+#id1 {
+    background-color: blue;
+    float: right;
+}
+
+#id2 {
+    background-color: green;
+
+}
+#id4{
+    position: absolute;
+    left:200px;
+    top: 300px;
+}
+#id2
+{
+    position: relative;
+    top:50px;
+}
+#id5{
+    background-color: yellow;
+    position: sticky;
+    top: 0;
+}
