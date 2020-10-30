@@ -1,0 +1,21 @@
+div{
+    display: flex;
+    flex:1;
+}
+.mere{
+    border: 1px black solid;
+    display: flex;
+    
+}
+.fille{
+    background-color: blue;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+}
+.fois2{
+    flex:2;
+}
+.hauteur{
+    height: 50px;
+}
