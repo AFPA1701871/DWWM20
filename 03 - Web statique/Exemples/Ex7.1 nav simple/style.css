@@ -21,3 +21,7 @@ div{
 .espace{
     flex: 0.3;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
