@@ -1,0 +1,37 @@
+div,
+body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.page {
+    width: 80%;
+    flex: none;
+    flex-direction: column;
+    display: block;
+}
+
+.case {
+    flex-direction: column;
+}
+
+.demi {
+    flex: 0.5;
+}
+
+.verso {
+    display: none;
+}
+
+.case:hover .verso {
+    display: flex;
+}
+
+.case:hover .recto {
+    display: none;
+}
+
+.espaceHor {
+    height: 2vh;
+}

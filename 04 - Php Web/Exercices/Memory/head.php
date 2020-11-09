@@ -6,12 +6,3 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="ligne">
-        <div class="case">
-            <img class="recto" src="plage.jpg" alt="">
-            <img class="verso" src="1.jpg" alt="">
-        </div>
-    </div>
-</body>
-</html>
