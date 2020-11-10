@@ -1,12 +1,18 @@
+:root{
+    --bleuclair: #32bb38;
+    --bleuFonce: #b1e29e;
+    --degrade: linear-gradient(var(--bleuclair),17%, var(--bleuFonce));
+}
+
 body{
     background-color: lightblue;
 }
 header, footer{
-    background-color: lightcoral;
+    background-color: var(--bleuclair);
     margin: 20px;
 }
 div{
-    background-color: lightgreen;
+    background :var(--degrade);
 }
 #toto{
     background-color: lime;
