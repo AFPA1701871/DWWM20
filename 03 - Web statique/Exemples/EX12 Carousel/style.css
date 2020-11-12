@@ -1,0 +1,33 @@
+
+.diapo {
+    width: 50vw;
+    height: 50vh;
+    background-size: cover;
+    animation-name: fondu;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 9s;
+    animation-direction: alternate;
+}
+
+.diapo:hover {
+    animation-play-state: paused;
+}
+
+@keyframes fondu {
+    0% {
+        background-image: url("images/1.jpg");
+    }
+
+    33.33% {
+        background-image: url("images/2.jpg");
+    }
+
+    66.67% {
+        background-image: url("images/3.jpg");
+    }
+
+    100% {
+        background-image: url("images/4.jpg");
+    }
+}
