@@ -1,12 +1,12 @@
 
 .diapo {
     width: 50vw;
-    height: 50vh;
+    height: 50vw;
     background-size: cover;
-    animation-name: fondu;
+    animation-name: toto;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
-    animation-duration: 9s;
+    animation-duration: 12s;
     animation-direction: alternate;
 }
 
@@ -14,7 +14,7 @@
     animation-play-state: paused;
 }
 
-@keyframes fondu {
+@keyframes toto {
     0% {
         background-image: url("images/1.jpg");
     }
