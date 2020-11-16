@@ -1,0 +1,26 @@
+div , body {
+    display: flex;
+    flex: 1;
+}
+
+#case1 {
+    background-color: #8a4d4d;
+}
+
+#case2 {
+    background-color: #5766a8;
+}
+
+#case3 {
+    background-color: #4bb161;
+}
+.case{
+    padding: 2em;
+}
+
+@media (max-width: 800px)
+{
+    #case2{
+        order: 1;
+    }
+}
