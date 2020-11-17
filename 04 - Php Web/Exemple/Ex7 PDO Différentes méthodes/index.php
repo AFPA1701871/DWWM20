@@ -89,7 +89,7 @@ $perso = new Personne(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
 
 //on prepare la requete
 // :nom est une variable SQL
-$q = $db->prepare('INSERT INTO personnes(nom, prenom, age) VALUES('.$perso->getNom().','.$perso->getPrenom().','.$perso->getAge().')');
+$q = $db->prepare('INSERT INTO personnes(nom, prenom, age) VALUES("'.$perso->getNom().'","'.$perso->getPrenom().'",'.$perso->getAge().')');
 
 // Ex�cution de la requ�te.
 $reponse = $q->execute();
