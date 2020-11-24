@@ -16,17 +16,17 @@ switch ($mode)
         }
     case "modif":    {
             echo '<form action="index.php?codePage=actionHotel&mode=modif" method="POST">
-        <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+        <input name="idHotel"  value="' . $hotelChoisi->getIdHotel() . '" type="hidden" />';
             break;
         }
     case "delete":    {
             echo '<form action="index.php?codePage=actionHotel&mode=delete" method="POST">
-        <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+        <input name="idHotel"  value="' . $hotelChoisi->getIdHotel() . '" type="hidden" />';
             break;
         }
     case "edit":    { //il n'y a pas d'action sur le formulaire, juste le bouton retour
         echo '<form >  
-    <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+    <input name="idHotel"  value="' . $hotelChoisi->getIdHotel() . '" type="hidden" />';
         break;
     }
 }
