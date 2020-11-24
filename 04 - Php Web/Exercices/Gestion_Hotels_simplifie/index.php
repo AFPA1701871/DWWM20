@@ -39,18 +39,6 @@ $routes = [
     "default" => ["PHP/VIEW/", "ListeHotel", "Liste de Hotels"],
 
     "listeHotel" => ["PHP/VIEW/", "ListeHotel", "Liste des Hotels"],
-
-    "formEditHotel" => ["PHP/VIEW/", "FormEditHotel", "Détail de l'hotel"],
-    
-    "formAjoutHotel" => ["PHP/VIEW/", "FormAjoutHotel", "Détail de l'hotel"],
-    // "actionAjoutHotel" => ["PHP/VIEW/", "ActionAjoutHotel", "Mise à jour de l'hotel"],
-    
-    "formModifHotel" => ["PHP/VIEW/", "FormModifHotel", "Détail de l'hotel"],
-    // "actionModifHotel" => ["PHP/VIEW/", "ActionModifHotel", "Mise à jour de l'hotel"],
-    
-    "formSupprHotel" => ["PHP/VIEW/", "FormSupprHotel", "Détail de l'hotel"],
-    // "actionSupprHotel" => ["PHP/VIEW/", "ActionSupprHotel", "Mise à jour de l'hotel"],
-
     "formHotel" => ["PHP/VIEW/", "FormHotel", "Détail de l'hotel"],
     "actionHotel" => ["PHP/VIEW/", "ActionHotel", "Mise à jour de l'hotel"]
 ];

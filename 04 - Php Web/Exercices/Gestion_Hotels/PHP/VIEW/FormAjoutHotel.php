@@ -1,4 +1,5 @@
-<form action="index.php?codePage=actionAjoutHotel" method="POST">
+<!-- <form action="index.php?codePage=actionAjoutHotel" method="POST"> -->
+<form action="index.php?codePage=actionHotel&mode=ajout" method="POST">
     <div>
         <label for="nomHotel">Nom</label>
         <input name="nomHotel" />
@@ -18,5 +19,5 @@
         <input name="idStation" value="1" type="hidden" />
     <div></div>
     <button type="submit">Ajouter un hotel</button>
-<button><a href="index.php?codePage=listeHotel">Retour</a></button>
+    <button><a href="index.php?codePage=listeHotel">Retour</a></button>
 </form>

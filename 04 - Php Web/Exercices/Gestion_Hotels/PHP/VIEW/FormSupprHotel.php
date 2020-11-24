@@ -2,8 +2,8 @@
 $idRecu = $_GET['id'];
 $hotelChoisi = HotelsManager::findById($idRecu);
 
-echo '
-<form action="index.php?codePage=actionSupprHotel" method="POST">
+//<form action="index.php?codePage=actionSupprHotel" method="POST">
+echo '<form action="index.php?codePage=actionHotel&mode=delete" method="POST">
     <input name="idHotel"  value="'.$hotelChoisi->getidHotel().'" type="hidden" />
     <div>
         <label for="nomHotel">Nom</label>
