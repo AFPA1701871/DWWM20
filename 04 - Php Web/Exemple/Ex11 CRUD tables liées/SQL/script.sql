@@ -22,3 +22,10 @@ CREATE TABLE IF NOT EXISTS produits (
 INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(1, 'gomme', 2, '2020-11-30');
 INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(2, 'crayon', 1, '2020-11-30');
 
+
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `idCategorie` int(11) NOT NULL AUTO_INCREMENT,
+  `LibelleCategorie` varchar(50) NOT NULL,
+  PRIMARY KEY (`idCategorie`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
