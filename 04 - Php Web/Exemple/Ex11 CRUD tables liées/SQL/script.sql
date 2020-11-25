@@ -1,27 +1,11 @@
+CREATE DATABASE IF NOT EXISTS `baseproduits` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `baseproduits`;
+
+-- --------------------------------------------------------
 
 --
--- Base de données :  baseproduits
+-- Structure de la table `categories`
 --
-DROP DATABASE baseproduits;
-CREATE DATABASE IF NOT EXISTS baseproduits ;
-USE baseproduits;
-
-
-DROP TABLE IF EXISTS produits;
-CREATE TABLE IF NOT EXISTS produits (
-  idProduit int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  libelleProduit varchar(50) NOT NULL,
-  prix int(11) NOT NULL,
-  dateDePeremption date NOT NULL
-) ENGINE=InnoDB ;
-
---
--- Chargement des données de la table produits
---
-
-INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(1, 'gomme', 2, '2020-11-30');
-INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(2, 'crayon', 1, '2020-11-30');
-
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -29,3 +13,30 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `LibelleCategorie` varchar(50) NOT NULL,
   PRIMARY KEY (`idCategorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produits`
+--
+
+DROP TABLE IF EXISTS `produits`;
+CREATE TABLE IF NOT EXISTS `produits` (
+  `idProduit` int(11) NOT NULL AUTO_INCREMENT,
+  `libelleProduit` varchar(50) NOT NULL,
+  `prix` int(11) NOT NULL,
+  `dateDePeremption` date NOT NULL,
+  `idCategorie` int(11) NOT NULL,
+  PRIMARY KEY (`idProduit`),
+  KEY `FK_Produit_Categorie` (`idCategorie`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `produits`
+--
+ALTER TABLE `produits`
+  ADD CONSTRAINT `FK_Produit_Categorie` FOREIGN KEY (`idCategorie`) REFERENCES `categories` (`idCategorie`);
