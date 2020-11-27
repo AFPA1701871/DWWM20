@@ -1,24 +1,29 @@
+CREATE DATABASE IF NOT EXISTS baseproduits DEFAULT CHARACTER
+SET latin1 COLLATE latin1_swedish_ci;
 
---
--- Base de données :  baseproduits
---
-DROP DATABASE baseproduits;
-CREATE DATABASE IF NOT EXISTS baseproduits ;
 USE baseproduits;
 
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE IF NOT EXISTS categories (
+  idCategorie int (11) NOT NULL AUTO_INCREMENT,
+  LibelleCategorie varchar (50) NOT NULL,
+  PRIMARY KEY (idCategorie)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 DROP TABLE IF EXISTS produits;
+
 CREATE TABLE IF NOT EXISTS produits (
-  idProduit int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  libelleProduit varchar(50) NOT NULL,
-  prix int(11) NOT NULL,
-  dateDePeremption date NOT NULL
-) ENGINE=InnoDB ;
+  idProduit int (11) NOT NULL AUTO_INCREMENT,
+  libelleProduit varchar (50) NOT NULL,
+  prix int (11) NOT NULL,
+  dateDePeremption date NOT NULL,
+  idCategorie int (11) NOT NULL,
+  PRIMARY KEY (idProduit),
+  KEY FK_Produit_Categorie (idCategorie)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
---
--- Chargement des données de la table produits
---
-
-INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(1, 'gomme', 2, '2020-11-30');
-INSERT INTO produits (idProduit, libelleProduit, prix, dateDePeremption) VALUES(2, 'crayon', 1, '2020-11-30');
-
+ALTER TABLE
+  produits
+ADD
+  CONSTRAINT FK_Produit_Categorie FOREIGN KEY (idCategorie) REFERENCES categories (idCategorie);
