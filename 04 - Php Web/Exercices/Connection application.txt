@@ -1,0 +1,19 @@
+1. créer une table utilisateur dans la base de données
+    idUtilisateur
+    nom
+    prenom
+    mot de passe
+    adresseMail
+    role
+    pseudo
+2. creer la classe et le manager
+3. formulaire inscription  (formulaire ajout)
+    action Inscription
+4. formulaire connexion     (formulaire select findByPseudo / findByEmail)
+    action connexion
+5. crypter les mots de passe (md5)   motcrypté = md5(motnoncrypté)
+6. utilisation de la variable $_SESSION
+    start_session()   // demarrer ou d'activer la _SESSION
+    $_SESSION['idUtilisateur']='12'
+    $_SESSION['nom']='toto'
+7. mettre à jour le header en fonction de l'utilisateur connecté
