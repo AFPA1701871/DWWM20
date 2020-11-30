@@ -10,3 +10,4 @@
     
     <button type="submit">Valider</button>
 </form>
+<a href="index.php?codePage=inscription">s'inscrire</a>

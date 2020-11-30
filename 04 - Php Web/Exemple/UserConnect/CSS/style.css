@@ -12,4 +12,7 @@ div, header, footer, nav, article {
 img, video {
 	width : 100%;
 }
+.colonne{
+	flex-direction: column;
+}
 

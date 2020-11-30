@@ -32,19 +32,27 @@ function AfficherPage($page)
     include 'PHP/VIEW/Footer.php';
 }
 
+function crypte($mot) //fonction qui crypte le mot de passe
+{
+    return md5(md5($mot) . strlen($mot));
+}
+
+
 //on active la connexion à la base de données
 DbConnect::init();
 session_start();  // initialise la variable de Session
 /* création d'u tableau de redirection, en fonction du codePage, on choisit la page à afficher */
 $routes = [
-    "default" => ["PHP/VIEW/", "FormConnection", "Identification"],
+    "default" => ["PHP/VIEW/", "Accueil", "Accueil"],
 
     "inscription" => ["PHP/VIEW/", "FormInscription", "Identification"],
     "actionInscription" => ["PHP/VIEW/", "actionInscription", "xx"],
     "connection" => ["PHP/VIEW/", "FormConnection", "Identification"],
     "actionConnection" => ["PHP/VIEW/", "actionConnection", "xx"],
     "accueil" => ["PHP/VIEW/", "Accueil", "Accueil"],
-    "deconnection" => ["PHP/VIEW/", "Actiondeconnection", "xx"]
+    "deconnection" => ["PHP/VIEW/", "Actiondeconnection", "xx"],
+    "admin" => ["PHP/VIEW/", "Admin", "Admin"],
+    "user" => ["PHP/VIEW/", "User", "User"]
    
 ];
 

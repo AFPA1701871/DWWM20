@@ -7,3 +7,4 @@
 	<link rel="stylesheet" href="./CSS/style.css">
 	<script src="./JS/script.js"></script>
 </head>
+<body>
