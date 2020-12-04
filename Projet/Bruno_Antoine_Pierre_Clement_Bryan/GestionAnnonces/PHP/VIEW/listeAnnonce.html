@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>NON DU SITE</title>
+  </head>
+
+  <header>
+    <div>
+      <img src="../../IMG/logo.png" alt="" />
+    </div>
+    <div class="elmHeader divXl titre">La Bonne Annonce<span> .fr</span></div>
+
+    <!-- Si pas connecter -->
+    <!-- <div class="elmHeader">
+        <a href="index.php?codePage=login">Connection</a>
+    </div> -->
+
+    <!-- A cacher si pas connecter -->
+    <div class="elmHeader colonne">
+      <div>UserName</div>
+      <div>
+        <a href=" ">deconnection</a>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="elmNav">
+      <select name="categorie" id="categorie-select">
+        <option value="voiture">Voiture</option>
+        <option value="vetement">Vetement</option>
+      </select>
+    </div>
+    <div class="elmNav">
+      <button>Rechercher</button>
+    </div>
+    <div class="elmNav"><button>Ajouter une Annonce</button></div>
+    <!-- A cacher si pas connecter -->
+  </nav>
+
+  <body>
+    <article>
+      <div class="imgAnnonce">
+        <img src="../../IMG/imgAnnonce/voiture3.jpg" alt="" />
+      </div>
+      <div class="divXl">
+        <div class="infoAnnnonce">
+          <div>Titre de l'annonce</div>
+        </div>
+        <div class="infoAnnnonce">
+          <div>Prix</div>
+          <div>Mis en ligne le</div>
+          <div>Par</div>
+          <div>Statut</div>
+        </div>
+        <div class="crud">
+          <div><a href="index.php?codePage=formUpdateAnnonce">Modifier</a></div>
+          <div>
+            <a href="index.php?codePage=traitementAnnonde&mode=delete"
+              >Supprimer</a
+            >
+          </div>
+          <div><a href="index.php.codePage=viewAnnonce">Detail</a></div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

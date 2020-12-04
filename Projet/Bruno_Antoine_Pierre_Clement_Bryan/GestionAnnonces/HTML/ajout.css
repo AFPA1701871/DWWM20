@@ -1,0 +1,10 @@
+.flex{
+    display: flex;
+}
+
+.user{
+    padding: 0.4em;
+    background-color: #003A78;
+    color: #fff;
+    border-radius: 1em;
+}

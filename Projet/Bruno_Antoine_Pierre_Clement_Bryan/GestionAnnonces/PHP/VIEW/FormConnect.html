@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>NON DU SITE</title>
+  </head>
+
+  <header>
+    <div>
+      <img src="../../IMG/logo.png" alt="" />
+    </div>
+    <div class="elmHeader divXl titre">La Bonne Annonce<span> .fr</span></div>
+
+    <!-- Si pas connecter -->
+    <!-- <div class="elmHeader">
+        <a href="index.php?codePage=login">Connection</a>
+    </div> -->
+
+    <!-- A cacher si pas connecter -->
+    <div class="elmHeader colonne">
+      <div>UserName</div>
+      <div>
+        <a href=" ">deconnection</a>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="elmNav">Connection</div>
+  </nav>
+  <body>
+    <article>
+      <form action="Index.php?page=actionConnect" method="POST">
+        <div><label for="emailUtilisateur">Adresse E-mail</label></div>
+        <div>
+          <input
+            type="text"
+            name="emailUtilisateur"
+            placeholder="Adresse E-mail"
+            required
+          />
+        </div>
+        <div><label for="mdpUtilisateur">Mot de passe</label></div>
+        <div>
+          <input
+            type="password"
+            name="mdpUtilisateur"
+            placeholder="Mot de passe"
+            required
+          />
+        </div>
+
+        <div class="buttonForm">
+          <div></div>
+          <button><a href="">Accueil</a></button>
+          <div></div>
+          <button type="submit">Connection</button>
+          <div></div>
+        </div>
+        <div >
+            Nouvel utilisateur ? <a href="index.php?code=formInscript">crée vous un compte ici</a>
+        </div>
+      </form>
+    </article>
+  </body>
+</html>
