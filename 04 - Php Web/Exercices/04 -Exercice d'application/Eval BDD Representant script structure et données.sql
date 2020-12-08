@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `ventes` (
   `IdRepres` int(11) DEFAULT NULL,
   `IdProduit` int(11) DEFAULT NULL,
   `IdClient` int(11) DEFAULT NULL,
-  `Quantité` int(11) DEFAULT NULL,
+  `Quantite` int(11) DEFAULT NULL,
   PRIMARY KEY (`IdVente`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 COMMIT;
