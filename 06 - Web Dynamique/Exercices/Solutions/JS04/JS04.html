@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE>controle de saisie</TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+function unNombre() {
+	var charCode = window.event.keyCode;
+	if (charCode < 48 || charCode > 57) {
+		alert("saisir un nombre!!!");
+		return false;
+	}
+}
+
+
+function ValideForm() {
+	var nonvideExp = /./
+	var membreExp = /^\d{8}$/
+	var cdpostalExp = /^\d{5}$/
+	var emailExp = /^[a-z][a-z_0-9\.\-]+@[a-z_0-9\.\-]+\.[a-z]{2,3}$/i
+	var telExp = /^\d{10}$/
+	if (!nonvideExp.test(document.all.Nom.value)) {
+		alert("nom obligatoire");
+		document.all.Nom.focus();
+		return false;
+		}
+	if (!nonvideExp.test(document.all.Prenom.value)) {
+		alert("prenom obligatoire");
+		document.all.Prenom.focus();
+		return false;
+		}
+	if (!membreExp.test(document.all.Membre.value)) {
+		alert("membre incorrect");
+		document.all.Membre.focus();
+		return false;
+		}
+	if (!nonvideExp.test(document.all.Adresse.value)) {
+		alert("adresse obligatoire");
+		document.all.Adresse.focus();
+		return false;
+		}
+	if (!nonvideExp.test(document.all.Ville.value)) {
+		alert("ville obligatoire");
+		document.all.Ville.focus();
+		return false;
+		}
+	if (!cdpostalExp.test(document.all.Codepostal.value)) {
+		alert("code postal incorrect");
+		document.all.Codepostal.focus();
+		return false;
+		}
+	if (!emailExp.test(document.all.Email.value)) {
+		alert("email incorrect");
+		document.all.Email.focus();
+		return false;
+		}
+	if (!telExp.test(document.all.Téléphone.value)) {
+		alert("phone incorrect");
+		document.all.Téléphone.focus();
+		return false;
+		}
+	return true
+	}
+	
+function numerique(truc)
+{
+//cette fonction vérifie la vraisemblance d'un code postal
+//truc est le objet de type champ INPUT à controler
+
+var codeRet=true;		// true si le code postal est correct, faux sinon
+var chaine;				// La string à controler
+var longueur;			// la longueur de la string
+var i;					// indice de parcours dans la chaine
+var c;					// le caractère courant
+chaine=truc.value;		// récupérer la chaine
+
+
+longueur=chaine.length;	//calculer la longueur
+
+if (longueur==5)
+	{
+	i=0;
+	while (i<longueur && codeRet)	//parcourir tous les caractères de la chaine
+		{
+		 c=chaine.charAt(i);
+		 if ((c<'0') || (c>'9'))
+			{
+			alert("le code postal ne doit comporter que des chiffres");
+			codeRet=false;
+			}	 
+		 i++; 
+		}	//fin boucle de parcours de la chaine
+	}		//fin controle longueur
+else
+	{
+	alert("le code postal doit comporter 5 chiffres");
+	codeRet=false;
+	}		//fin controle longueur
+}			//fin function numérique
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY>
+
+<FORM name="client" action="client.htm" method="get">
+<TABLE>
+   <TR>
+	<TD>nom    : </TD>
+	<TD><INPUT type="text" name="Nom" value="" ></TD>
+
+   </TR>
+   <TR>
+	<TD>prénom : </TD>
+	<TD><INPUT type="text" name="Prenom" value=""></TD>
+   </TR>
+   <TR>
+	<TD>numero membre : </TD>
+	<TD><INPUT type="text" name="Membre" value="" onkeypress="unNombre()"></TD>
+   </TR>
+   <TR>
+	<TD>adresse : </TD>
+	<TD><INPUT type="text" name="Adresse" value=""></TD>
+   </TR>
+   <TR>
+	<TD>ville : </TD>
+	<TD><INPUT type="text" name="Ville" value=""></TD>
+   </TR>
+     <TR>
+	<TD>code postal : </TD>
+	<TD><INPUT type="text" name="Codepostal" value="" onblur="numerique(this)"></TD>
+   </TR>
+   <TR>
+	<TD>email : </TD>
+	<TD><INPUT type="text" name="Email" value="" ></TD>
+   </TR>
+   <TR>
+	<TD>telephone : </TD>
+	<TD><INPUT type="text" name="Téléphone" value="" onkeypress="unNombre()"></TD>
+   </TR>
+   <TR>
+	<TD><INPUT type="submit" name="valider" value="validation" onClick="return ValideForm()">
+	</TD>
+	<TD></TD>
+   </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>
