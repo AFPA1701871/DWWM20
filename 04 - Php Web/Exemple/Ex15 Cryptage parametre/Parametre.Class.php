@@ -69,7 +69,7 @@ class Parametre
             }
 
             self::$host = decode($param[0]);
-            self::$port = decode($param[1]);
+            self::$port = $param[1];
             self::$dbname = decode($param[2]);
             self::$login = decode($param[3]);
             self::$pwd = decode($param[4]);

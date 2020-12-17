@@ -13,9 +13,10 @@ function code($texte)
 function decode($texte)
 {
     $resultat="";
+    $texte = str_split($texte);
     for ($i = 0; $i < count($texte); $i++)
     {
-        $resultat = chr(ord($texte[$i]) - 3);
+        $resultat .= chr(ord($texte[$i]) - 3);
     }
     return $resultat;
 }
