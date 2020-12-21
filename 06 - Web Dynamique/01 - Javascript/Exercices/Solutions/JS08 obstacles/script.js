@@ -13,7 +13,7 @@ function deplace(dx, dy) {
         var wob = parseInt(styleObst.width);
         var hob = parseInt(styleObst.height);
         if (!depl_ok(tob, lob, wob, hob, t + dy, l + dx, w, h)) {
-            compteurCollision ++;
+            compteurCollision++;
             console.log("collision n°" + compteurCollision + "  " + elt.id);
         }
         deplacement_ok = deplacement_ok && depl_ok(tob, lob, wob, hob, t + dy, l + dx, w, h);
@@ -51,6 +51,11 @@ document.addEventListener("mousemove", (e) => {
         deplaceSouris(e);
     }
 });
+document.addEventListener("click", (e) => {
+    console.log("X " + e.clientX);
+    console.log("Y " + e.clientY);
+});
+
 
 carre.addEventListener("mouseup", (e) => {
     //on interdit le deplacement

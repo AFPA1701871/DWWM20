@@ -31,11 +31,20 @@ button{
     position: absolute;
     left: 500px;
     top: 100px;
-}#ob3
+}
+#ob3
 {
-    width: 3em;
+    width: 700px;
     height: 3em;
     position: absolute;
-    left: 40px;
-    top: 75px;
+    left: 113px;
+    top: 321px;
+}
+#ob4
+{
+    width: 3em;
+    height:600px;
+    position: absolute;
+    left: 113px;
+    top: 321px;
 }
