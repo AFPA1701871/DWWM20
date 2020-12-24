@@ -46,7 +46,7 @@ function init() {
     }
     mesImages = document.getElementsByClassName("plage");
     for (let i = 0; i < mesImages.length; i++) {
-        afficheImage( mesImages[i].src ,false);
+        afficheImage( mesImages[i],false);
     }
 }
 
@@ -65,15 +65,17 @@ function clickImage(e) {
                 nbPairTrouvee++;
                 imageCliquee.removeEventListener("click", clickImage);
                 imagePrecedente.removeEventListener("click", clickImage);
+                nbImageSelectionne = 0;
                 zoneNbPairTrouvee.innerHTML = nbPairTrouvee;
             } else { //les images sont différentes
                 setTimeout(function () {
                     afficheImage(imageCliquee, false);
                     afficheImage(imagePrecedente, false);
+                    nbImageSelectionne = 0;
                 }, 2000);
 
             }
-            nbImageSelectionne = 0;
+           
         }
     }
     zoneNbClick.innerHTML = nbClick;
