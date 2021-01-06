@@ -58,8 +58,12 @@ confirmation.addEventListener("paste", function (event) {
 //gestion de l'oeil dans le mot de passe
 var oeil = document.getElementsByClassName("oeil")[0];
 // on affiche un petit oeil qui permet de voir de mot de passe 
-oeil.addEventListener("mousedown", function (){ affichePassWord(true);});
-oeil.addEventListener("mouseup", function (){ affichePassWord(false);});
+oeil.addEventListener("mousedown", function () {
+    affichePassWord(true);
+});
+oeil.addEventListener("mouseup", function () {
+    affichePassWord(false);
+});
 
 /**
  * Gestion des infobulles
@@ -150,19 +154,19 @@ function checkAllValidity() {
     }
     if (uneErreur) {
         submit.disabled = false;
-        submit.style.color="white";
-        submit.style.borderBottom="4px solid white";
+        submit.style.color = "white";
+        submit.style.borderBottom = "4px solid white";
     } else {
         submit.disabled = true;
-        submit.style.color="#666666";
-        submit.style.borderBottom="4px solid #666666";
+        submit.style.color = "#666666";
+        submit.style.borderBottom = "4px solid #666666";
     }
 }
 /**
  * Change le type de l'input mot de passe
  * @param {boolean} flag 
  */
-function affichePassWord(flag){
-    if (flag) mdp.type="text";
-    else mdp.type="password";
+function affichePassWord(flag) {
+    if (flag) mdp.type = "text";
+    else mdp.type = "password";
 }
