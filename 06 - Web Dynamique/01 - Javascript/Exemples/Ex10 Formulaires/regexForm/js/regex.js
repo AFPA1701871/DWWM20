@@ -17,14 +17,14 @@ for (let i = 0; i < inputs.length; i++) {
 mdp.addEventListener("input", function (event) {
     let aideMdp = document.getElementsByClassName("aideMdp")[0];
     aideMdp.style.display = "flex";
-    let lesImages = aideMdp.getElementsByTagName("img");
+    let lesImages = aideMdp.getElementsByTagName("i");
     let lesCheck = ["([a-zA-Z0-9!@#\$%\^&\*+]{8,})", "(?=.*[A-Z])", "(?=.*[a-z])", "(?=.*[0-9])", "(?=.*[!@#\$%\^&\*+])"];
     for (let i = 0; i < lesCheck.length; i++) {
         if (RegExp(lesCheck[i]).test(mdp.value)) {
             //la condition est vérifiée, on met la coche verte correspondent
-            lesImages[i].src = "./Images/V.png"
+            lesImages[i].classList="far fa-check-circle vert";
         } else {
-            lesImages[i].src = "./Images/X.png"
+            lesImages[i].classList="far fa-times-circle rouge";
         }
     }
 })
