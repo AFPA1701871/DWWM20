@@ -135,26 +135,6 @@ function impactValidity(input, isValid) {
         default:
             break;
     }
-    // switch (isValid) {
-    //     case true:
-    //         message.innerHTML = "Champ valide.";
-    //         input.style.borderBottomColor = "rgb(50,200,50)";
-    //         image.src = "./Images/V.png";
-    //         image.style.display = "block";
-    //         break;
-    //     case 0:
-    //         message.innerHTML = "Champ requis!";
-    //         image.style.display = "none";
-    //         break;
-    //     case false:
-    //         message.innerHTML = "Format invalide!";
-    //         input.style.borderBottomColor = "rgb(200,50,50)";
-    //         image.src = "./Images/X.png";
-    //         image.style.display = "block";
-    //         break;
-    //     default:
-    //         break;
-    // }
 }
 
 /**
@@ -170,8 +150,12 @@ function checkAllValidity() {
     }
     if (uneErreur) {
         submit.disabled = false;
+        submit.style.color="white";
+        submit.style.borderBottom="4px solid white";
     } else {
         submit.disabled = true;
+        submit.style.color="#666666";
+        submit.style.borderBottom="4px solid #666666";
     }
 }
 /**

@@ -85,6 +85,13 @@ input[required] +div::before{
     content: "*";
     color: red;
 }
+input[type=submit]
+{
+    color: #666666;    
+    border-bottom: 4px solid #666666;
+    width: 50%;
+    align-self: center;
+}
 .info{
     position: relative;
 }
