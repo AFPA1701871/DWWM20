@@ -85,16 +85,16 @@ function verifConfirm(event) {
         imgRouge.style.visibility = 'hidden';
         imgVerte.style.visibility = 'visible';
         message.innerHTML = "";
+        tabErreur[monInput.name]=0;
     } else {
         imgVerte.style.visibility = 'hidden';
         imgRouge.style.visibility = 'visible';
-        message.innerHTML = "";
-        tabErreur[monInput.name]=0;
+        message.innerHTML = "la confirmation n'est pas égale au mot de passe";
     }
     verifForm();
 }
 
-function annule() {
+function annule(event) {
     //methode qui empeche le coller dans l'input confirm 
     event.preventDefault()
     return false;

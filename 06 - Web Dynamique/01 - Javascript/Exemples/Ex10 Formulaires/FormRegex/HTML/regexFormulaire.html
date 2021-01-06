@@ -27,7 +27,7 @@
                         ?=.* n'est pas intégré au résultat
                         (?=.*[@ç_-]) au moins un caractere special
             [0-9a-zA-Z@ç_]{8,30} oblige le mot de passe à avoir entre 8 et 30 caracteres et que les caractères soient dans la liste
-    adresse mail        "^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$"
+    adresse mail        "^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$"
 
 -->
 <body>
@@ -105,7 +105,7 @@
         </div>
         <div class="ligne">
             <label for="mail">Adresse mail : </label>
-            <input type="email" class="input" id="email" name="mail"  required pattern="^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$">
+            <input type="email" class="input" id="email" name="mail"  required pattern="^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$">
             <div class="interrogation" title="saisissez votre adresse mail"><img src="../Images/interrogation.png" /></div>
             <div class="boutonVert"><img src="../Images/V.png" /></div>
             <div class="boutonRouge"><img src="../Images/X.png" /></div>
