@@ -103,7 +103,7 @@ input[required] +div::before{
     background-color: rgba(24, 24, 24, 0.5);
     padding: 0.5vh;
 }
-.check img
+.check i
 {
     display: none;
 }
@@ -133,4 +133,11 @@ li{
     position: absolute;
     left: -3vw;
     top:1vh;
+}
+.vert{
+    color: #3db651;
+}
+.rouge{
+    color: red;
+    
 }

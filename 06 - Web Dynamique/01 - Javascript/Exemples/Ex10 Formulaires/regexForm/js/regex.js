@@ -113,13 +113,13 @@ function impactValidity(input, isValid) {
 
     var message = input.parentNode.getElementsByClassName("message")[0];
     message.classList.add("visible");
-    image = input.parentNode.getElementsByTagName("img")[0];
+    image = input.parentNode.getElementsByTagName("i")[1];
 
     switch (isValid) {
         case true:
             message.innerHTML = "Champ valide.";
             input.style.borderBottomColor = "rgb(50,200,50)";
-            image.src = "./Images/V.png";
+            image.classList = "far fa-check-circle fa-2x vert";
             image.style.display = "block";
             break;
         case 0:
@@ -129,12 +129,32 @@ function impactValidity(input, isValid) {
         case false:
             message.innerHTML = "Format invalide!";
             input.style.borderBottomColor = "rgb(200,50,50)";
-            image.src = "./Images/X.png";
+            image.classList = "far fa-times-circle fa-2x rouge";
             image.style.display = "block";
             break;
         default:
             break;
     }
+    // switch (isValid) {
+    //     case true:
+    //         message.innerHTML = "Champ valide.";
+    //         input.style.borderBottomColor = "rgb(50,200,50)";
+    //         image.src = "./Images/V.png";
+    //         image.style.display = "block";
+    //         break;
+    //     case 0:
+    //         message.innerHTML = "Champ requis!";
+    //         image.style.display = "none";
+    //         break;
+    //     case false:
+    //         message.innerHTML = "Format invalide!";
+    //         input.style.borderBottomColor = "rgb(200,50,50)";
+    //         image.src = "./Images/X.png";
+    //         image.style.display = "block";
+    //         break;
+    //     default:
+    //         break;
+    // }
 }
 
 /**
