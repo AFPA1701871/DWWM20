@@ -89,6 +89,10 @@ form input:focus {
 form input[type="submit"] {
     margin-top: 3vh;
     padding: 1vh 2vw;
+    color: #666666;
+    border-bottom: 4px solid #666666;
+    width: 50%;
+    align-self: center;
 }
 
 input[required]+div::before {
@@ -96,12 +100,6 @@ input[required]+div::before {
     color: red;
 }
 
-input[type=submit] {
-    color: #666666;
-    border-bottom: 4px solid #666666;
-    width: 50%;
-    align-self: center;
-}
 
 .info {
     position: relative;

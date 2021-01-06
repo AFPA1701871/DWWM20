@@ -14,6 +14,7 @@ for (let i = 0; i < inputs.length; i++) {
     });
 }
 // affichage de l'aide à la saisie du mot de passe 
+// c'est la 2eme fois que l'on pose un listener sur input de mot de passe, les 2 fonctions vont s'executer l'une derrière l'autre 
 mdp.addEventListener("input", function (event) {
     let aideMdp = document.getElementsByClassName("aideMdp")[0];
     aideMdp.style.display = "flex";
@@ -21,10 +22,10 @@ mdp.addEventListener("input", function (event) {
     let lesCheck = ["([a-zA-Z0-9!@#\$%\^&\*+]{8,})", "(?=.*[A-Z])", "(?=.*[a-z])", "(?=.*[0-9])", "(?=.*[!@#\$%\^&\*+])"];
     for (let i = 0; i < lesCheck.length; i++) {
         if (RegExp(lesCheck[i]).test(mdp.value)) {
-            //la condition est vérifiée, on met la coche verte correspondent
-            lesImages[i].classList="far fa-check-circle vert";
+            //la condition est vérifiée, on met la coche verte correspondente
+            lesImages[i].classList = "far fa-check-circle vert";
         } else {
-            lesImages[i].classList="far fa-times-circle rouge";
+            lesImages[i].classList = "far fa-times-circle rouge";
         }
     }
 })
@@ -41,19 +42,10 @@ confirmation.addEventListener("input", function (event) {
     }
 })
 //empecher le copier dans la zone mdp et confirm
-mdp.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-    return false;
-});
-confirmation.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-    return false;
-});
+mdp.addEventListener("contextmenu", annule);
+confirmation.addEventListener("contextmenu", annule);
 //empecher le coller dans la confirmation
-confirmation.addEventListener("paste", function (event) {
-    event.preventDefault();
-    return false;
-});
+confirmation.addEventListener("paste", annule);
 
 //gestion de l'oeil dans le mot de passe
 var oeil = document.getElementsByClassName("oeil")[0];
@@ -67,7 +59,7 @@ oeil.addEventListener("mouseup", function () {
 
 /**
  * Gestion des infobulles
- * On récupère l'information dans le title de l'inout et on l'affiche au dessus de l'interface
+ * On récupère l'information dans le title de l'input et on l'affiche au dessus de l'interface
  */
 infobulles = document.getElementsByClassName("infobulle");
 for (let i = 0; i < infobulles.length; i++) {
@@ -146,13 +138,14 @@ function impactValidity(input, isValid) {
  * Vérification de tous les champs
  */
 function checkAllValidity() {
-    var uneErreur = true;
+    var pasErreur = true;
     i = 0;
-    while (uneErreur && i < inputs.length) {
-        uneErreur = validateInput(inputs[i])
+    // on vérifie les inputs un à un
+    while (pasErreur && i < inputs.length) {
+        pasErreur = validateInput(inputs[i])
         i++;
     }
-    if (uneErreur) {
+    if (pasErreur) {
         submit.disabled = false;
         submit.style.color = "white";
         submit.style.borderBottom = "4px solid white";
@@ -169,4 +162,12 @@ function checkAllValidity() {
 function affichePassWord(flag) {
     if (flag) mdp.type = "text";
     else mdp.type = "password";
+}
+/**
+ * Annule l'action associé à la touche ou au clic
+ * @param {*} event 
+ */
+function annule(event) {
+    event.preventDefault(); //annule la fonction standard associée à la frappe ou au clic
+    return false;
 }
