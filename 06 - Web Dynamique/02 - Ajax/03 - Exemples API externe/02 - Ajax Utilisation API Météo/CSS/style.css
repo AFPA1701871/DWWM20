@@ -1,0 +1,42 @@
+﻿/*-----------------------------------GLOBAL---          --------------------------------------*/
+body {
+	background-image: url("../Images/font.jpg");
+	/* background-position: center; */
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: black;
+	text-align: center;
+}
+
+img {
+	width: 100%;
+}
+
+.espace{
+	height: 5vh;
+}
+
+#ico{
+	width: 10vh;
+}
+
+.info{
+	font-size: 1.5em;
+}
+
+#nomVille{
+	font-size: 3em;
+	font-weight: bolder;
+	color: black;
+}
+
+label{
+	font-size: 1.5em;
+}
+
+input{
+	border-radius: 1vh;
+	border: 5px solid rgb(69, 104, 218);
+	text-align: center;
+	font-weight: bolder;
+}
