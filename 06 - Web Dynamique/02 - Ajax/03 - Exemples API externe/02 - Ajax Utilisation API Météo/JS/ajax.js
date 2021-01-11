@@ -6,26 +6,19 @@ var meteo = document.getElementById("meteo");
 var tempMax = document.getElementById("tempMax");
 var tempMin = document.getElementById("tempMin");
 var vitesseVent = document.getElementById("ventVitesse");
+const req = new XMLHttpRequest();
 
 
 
+/**************************  Listener ****************/
 inputVille.addEventListener("blur", recupVille);
 document.addEventListener("keypress", function (e) {
     if (e.key == "Enter") recupVille();
 });
 
-function recupVille() {
-    console.log(inputVille.value);
-    afficheVille.innerHTML = inputVille.value;
-    //on envoi la requête
-    req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q= ' + inputVille.value + '&appid=4f00f8b80c9b221ffd12e64353e31667&units=metric&lang=fr', true);
-    req.send(null);
-}
 
 // Utilisation de l'Ajax pour appeler l'API et récuperer les enregistrements
-var enregs; // contient la reponse de l'API
-// on définit une requete
-const req = new XMLHttpRequest();
+
 //on vérifie les changements d'états de la requête
 req.onreadystatechange = function (event) {
     if (this.readyState === XMLHttpRequest.DONE) {
@@ -53,3 +46,13 @@ req.onreadystatechange = function (event) {
         }
     }
 };
+
+/**************************  Fonctions ****************/
+
+function recupVille() {
+    console.log(inputVille.value);
+    afficheVille.innerHTML = inputVille.value;
+    //on envoi la requête
+    req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q= ' + inputVille.value + '&appid=4f00f8b80c9b221ffd12e64353e31667&units=metric&lang=fr', true);
+    req.send(null);
+}
