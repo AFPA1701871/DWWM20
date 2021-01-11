@@ -15,6 +15,6 @@ requ.onreadystatechange = function(event) {
     }
 };
 
-requ.open('GET', '/06 - Web Dynamique/02 - Ajax/04 - Exemples API Interne/01 - AJAX Personne - avec rounting/index.php?codePage=listeAPI', true);
+requ.open('GET', '/06 - Web Dynamique/02 - Ajax/04 - Exemples API Interne/02 - AJAX Personne - avec routing/index.php?codePage=listeAPI', true);
 
 requ.send(null);
