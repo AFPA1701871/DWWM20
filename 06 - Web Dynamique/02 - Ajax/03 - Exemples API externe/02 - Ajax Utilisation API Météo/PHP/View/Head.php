@@ -7,4 +7,5 @@ echo (!empty($titre)) ? '<title>' . $titre . '</title>' : '<title>  </title>';
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet"  href="CSS/style.css" />
+<link rel="shortcut icon" href="Images/ic_launcher.ico" type="image/x-icon">
 </head>

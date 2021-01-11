@@ -32,7 +32,7 @@ req.onreadystatechange = function (event) {
             meteo.innerHTML = "Meteo actuelle : " + reponse.weather[0].description;
             tempMax.innerHTML = "Temperature Maximale " + reponse.main.temp_max + " °";
             tempMin.innerHTML = "Temperature Minimale " + reponse.main.temp_min + " °";
-            vitesseVent.innerHTML = "Vitesse du vent  " + reponse.wind.speed + " m/h";
+            vitesseVent.innerHTML = "Vitesse du vent  " + reponse.wind.speed + " m/s";
 
             console.log("Réponse reçue: %s", this.responseText);
         } else {
