@@ -140,6 +140,7 @@ CREATE TABLE Tuteurs(
 
 CREATE TABLE Stages(
         idStage              Int  Auto_increment  NOT NULL PRIMARY KEY,
+		etape				 Int NOT NULL,
         dateVisite           Date NOT NULL ,
         nomVisiteur          Varchar (50) NOT NULL ,    
         lieuRealisation      Varchar (30) NOT NULL ,

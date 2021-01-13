@@ -6,6 +6,7 @@ class Stages
 	/*****************Attributs***************** */
 
 	private $_idStage;
+	private $_etape;
 	private $_dateVisite;
 	private $_nomVisiteur;
 	private $_lieuRealisation;
@@ -47,7 +48,16 @@ class Stages
 	{
 		$this->_idStage=$idStage;
 	}
+	
+	public function getEtape()
+	{
+		return $this->_etape;
+	}
 
+	public function setEtape($etape)
+	{
+		$this->_etape = $etape;
+	}
 	public function getDateVisite()
 	{
 		return $this->_dateVisite;
@@ -389,4 +399,6 @@ class Stages
 	{
 		return;
 	}
+
+	
 }
