@@ -55,7 +55,7 @@ CREATE TABLE Utilisateurs(
 
 CREATE TABLE Roles(
         idRole      Int  Auto_increment  NOT NULL PRIMARY KEY ,
-        libelleRole Varchar (10) NOT NULL
+        libelleRole Varchar (25) NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
@@ -67,7 +67,7 @@ CREATE TABLE Stagiaires(
         idStagiaire            Int  Auto_increment  NOT NULL PRIMARY KEY,
         genreStagiaire         Varchar (30) NOT NULL ,
         nomStagiaire           Varchar (30) NOT NULL ,
-        prenomStagiaire        Varchar (3) NOT NULL ,
+        prenomStagiaire        Varchar (30) NOT NULL ,
         numSecuStagiaire       Varchar (15) NOT NULL ,
         numBenefStagiaire      Varchar (15) NOT NULL ,
         dateNaissanceStagiaire Date NOT NULL
@@ -80,7 +80,7 @@ CREATE TABLE Stagiaires(
 
 CREATE TABLE Formations(
         idFormation      Int  Auto_increment  NOT NULL PRIMARY KEY,
-        libelleFormation Varchar (50) NOT NULL
+        libelleFormation Varchar (200) NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
