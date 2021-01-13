@@ -10,6 +10,7 @@ class Utilisateurs
 	private $_prenomUtilisateur;
 	private $_emailUtilisateur;
 	private $_mdpUtilisateur;
+	private $_datePeremption;
 	private $_idRole;
 
 	/***************** Accesseurs ***************** */
@@ -63,6 +64,16 @@ class Utilisateurs
 	public function setMdpUtilisateur($mdpUtilisateur)
 	{
 		$this->_mdpUtilisateur=$mdpUtilisateur;
+	}
+
+	public function getDatePeremption()
+	{
+		return $this->_datePeremption;
+	}
+
+	public function setDatePeremption($datePeremption)
+	{
+		$this->_datePeremption = $datePeremption;
 	}
 
 	public function getIdRole()
@@ -136,4 +147,6 @@ class Utilisateurs
 	{
 		return;
 	}
+
+
 }

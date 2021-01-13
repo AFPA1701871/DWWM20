@@ -5,11 +5,12 @@ class UtilisateursManager
 	public static function add(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO Utilisateurs (nomUtilisateur,prenomUtilisateur,emailUtilisateur,mdpUtilisateur,idRole) VALUES (:nomUtilisateur,:prenomUtilisateur,:emailUtilisateur,:mdpUtilisateur,:idRole)");
+		$q=$db->prepare("INSERT INTO Utilisateurs (nomUtilisateur,prenomUtilisateur,emailUtilisateur,mdpUtilisateur,datePeremption,idRole) VALUES (:nomUtilisateur,:prenomUtilisateur,:emailUtilisateur,:mdpUtilisateur,:datePeremption,:idRole)");
 		$q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
 		$q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
 		$q->bindValue(":emailUtilisateur", $obj->getEmailUtilisateur());
 		$q->bindValue(":mdpUtilisateur", $obj->getMdpUtilisateur());
+		$q->bindValue(":datePeremption", $obj->getDatePeremption());
 		$q->bindValue(":idRole", $obj->getIdRole());
 		$q->execute();
 	}
@@ -17,12 +18,13 @@ class UtilisateursManager
 	public static function update(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE Utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,emailUtilisateur=:emailUtilisateur,mdpUtilisateur=:mdpUtilisateur,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
+		$q=$db->prepare("UPDATE Utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,emailUtilisateur=:emailUtilisateur,mdpUtilisateur=:mdpUtilisateur,datePeremption=:datePeremption,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
 		$q->bindValue(":idUtilisateur", $obj->getIdUtilisateur());
 		$q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
 		$q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
 		$q->bindValue(":emailUtilisateur", $obj->getEmailUtilisateur());
 		$q->bindValue(":mdpUtilisateur", $obj->getMdpUtilisateur());
+		$q->bindValue(":datePeremption", $obj->getDatePeremption());
 		$q->bindValue(":idRole", $obj->getIdRole());
 		$q->execute();
 	}
