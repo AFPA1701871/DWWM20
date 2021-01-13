@@ -5,9 +5,10 @@ class SessionformationManager
 	public static function add(Sessionformation $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO Sessionformation (numOffreFormation,objectifPAE,idFormation) VALUES (:numOffreFormation,:objectifPAE,:idFormation)");
+		$q=$db->prepare("INSERT INTO Sessionformation (numOffreFormation,objectifPAE,dateRapportSuivi,idFormation) VALUES (:numOffreFormation,:objectifPAE,:dateRapportSuivi,:idFormation)");
 		$q->bindValue(":numOffreFormation", $obj->getNumOffreFormation());
 		$q->bindValue(":objectifPAE", $obj->getObjectifPAE());
+		$q->bindValue(":dateRapportSuivi", $obj->getDateRapportSuivi());
 		$q->bindValue(":idFormation", $obj->getIdFormation());
 		$q->execute();
 	}
@@ -15,10 +16,11 @@ class SessionformationManager
 	public static function update(Sessionformation $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE Sessionformation SET idSessionFormation=:idSessionFormation,numOffreFormation=:numOffreFormation,objectifPAE=:objectifPAE,idFormation=:idFormation WHERE idSessionFormation=:idSessionFormation");
+		$q=$db->prepare("UPDATE Sessionformation SET idSessionFormation=:idSessionFormation,numOffreFormation=:numOffreFormation,objectifPAE=:objectifPAE,dateRapportSuivi=:dateRapportSuivi,idFormation=:idFormation WHERE idSessionFormation=:idSessionFormation");
 		$q->bindValue(":idSessionFormation", $obj->getIdSessionFormation());
 		$q->bindValue(":numOffreFormation", $obj->getNumOffreFormation());
 		$q->bindValue(":objectifPAE", $obj->getObjectifPAE());
+		$q->bindValue(":dateRapportSuivi", $obj->getDateRapportSuivi());
 		$q->bindValue(":idFormation", $obj->getIdFormation());
 		$q->execute();
 	}

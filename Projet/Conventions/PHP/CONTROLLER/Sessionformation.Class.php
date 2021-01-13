@@ -8,6 +8,7 @@ class Sessionformation
 	private $_idSessionFormation;
 	private $_numOffreFormation;
 	private $_objectifPAE;
+	private $_dateRapportSuivi;
 	private $_idFormation;
 
 	/***************** Accesseurs ***************** */
@@ -41,6 +42,16 @@ class Sessionformation
 	public function setObjectifPAE($objectifPAE)
 	{
 		$this->_objectifPAE=$objectifPAE;
+	}
+
+	public function getDateRapportSuivi()
+	{
+		return $this->_dateRapportSuivi;
+	}
+
+	public function setDateRapportSuivi($dateRapportSuivi)
+	{
+		$this->_dateRapportSuivi=$dateRapportSuivi;
 	}
 
 	public function getIdFormation()
@@ -83,7 +94,7 @@ class Sessionformation
 	*/
 	public function toString()
 	{
-		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."IdFormation : ".$this->getIdFormation()."\n";
+		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."IdFormation : ".$this->getIdFormation()."\n";
 	}
 
 

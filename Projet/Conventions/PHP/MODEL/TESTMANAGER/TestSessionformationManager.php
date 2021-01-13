@@ -8,7 +8,7 @@ var_dump($obj);
 echo $obj->toString();
 
 echo "ajout de l'objet". "<br>";
-$newObj = new Sessionformation(["numOffreFormation" => "([value 1])", "objectifPAE" => "([value 2])", "idFormation" => "([value 3])"]);
+$newObj = new Sessionformation(["numOffreFormation" => "([value 1])", "objectifPAE" => "([value 2])", "dateRapportSuivi" => "([value 3])", "idFormation" => "([value 4])"]);
 var_dump(SessionformationManager::add($newObj));
 
 echo "Liste des objets" . "<br>";
