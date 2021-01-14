@@ -62,4 +62,18 @@ class StagiairesManager
 		}
 		return $liste;
 	}
+	
+	public static function getByNumBenefStagiaire($numBenefStagiaire)
+    {
+        $db = DbConnect::getDb();
+        $num = (int) $numBenefStagiaire;
+        $liste = [];
+        $q = $db->query("SELECT * FROM Stagiaires where numBenefStagiaire=$num");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
+            if ($donnees != false) {
+                $liste[] = new Stagiaires($donnees);
+            }
+        }return $liste;
+
+	}
 }
