@@ -8,7 +8,7 @@ var_dump($obj);
 echo $obj->toString();
 
 echo "ajout de l'objet". "<br>";
-$newObj = new Entreprises(["raisonSociale" => "([value 1])", "statutJuridiqueEnt" => "([value 2])", "adresseEnt" => "([value 3])", "numSiretEnt" => "([value 4])", "indexSiret" => "([value 5])", "telEnt" => "([value 6])", "assureurEnt" => "([value 7])", "numSocietaire" => "([value 8])", "nomRepresentant" => "([value 9])", "prenomRepresentant" => "([value 10])", "fctRepresentant" => "([value 11])", "telRepresentant" => "([value 12])", "mailRepresentant" => "([value 13])", "idVille" => "([value 14])"]);
+$newObj = new Entreprises(["raisonSociale" => "([value 1])", "statutJuridiqueEnt" => "([value 2])", "adresseEnt" => "([value 3])", "numSiretEnt" => "([value 4])", "telEnt" => "([value 5])", "assureurEnt" => "([value 6])", "numSocietaire" => "([value 7])", "nomRepresentant" => "([value 8])", "prenomRepresentant" => "([value 9])", "fctRepresentant" => "([value 10])", "telRepresentant" => "([value 11])", "mailRepresentant" => "([value 12])", "idVille" => "([value 13])"]);
 var_dump(EntreprisesManager::add($newObj));
 
 echo "Liste des objets" . "<br>";

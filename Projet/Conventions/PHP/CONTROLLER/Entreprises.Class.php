@@ -10,7 +10,6 @@ class Entreprises
 	private $_statutJuridiqueEnt;
 	private $_adresseEnt;
 	private $_numSiretEnt;
-	private $_indexSiret;
 	private $_telEnt;
 	private $_assureurEnt;
 	private $_numSocietaire;
@@ -72,16 +71,6 @@ class Entreprises
 	public function setNumSiretEnt($numSiretEnt)
 	{
 		$this->_numSiretEnt=$numSiretEnt;
-	}
-
-	public function getIndexSiret()
-	{
-		return $this->_indexSiret;
-	}
-
-	public function setIndexSiret($indexSiret)
-	{
-		$this->_indexSiret=$indexSiret;
 	}
 
 	public function getTelEnt()
@@ -204,7 +193,7 @@ class Entreprises
 	*/
 	public function toString()
 	{
-		return "IdEntreprise : ".$this->getIdEntreprise()."RaisonSociale : ".$this->getRaisonSociale()."StatutJuridiqueEnt : ".$this->getStatutJuridiqueEnt()."AdresseEnt : ".$this->getAdresseEnt()."NumSiretEnt : ".$this->getNumSiretEnt()."IndexSiret : ".$this->getIndexSiret()."TelEnt : ".$this->getTelEnt()."AssureurEnt : ".$this->getAssureurEnt()."NumSocietaire : ".$this->getNumSocietaire()."NomRepresentant : ".$this->getNomRepresentant()."PrenomRepresentant : ".$this->getPrenomRepresentant()."FctRepresentant : ".$this->getFctRepresentant()."TelRepresentant : ".$this->getTelRepresentant()."MailRepresentant : ".$this->getMailRepresentant()."IdVille : ".$this->getIdVille()."\n";
+		return "IdEntreprise : ".$this->getIdEntreprise()."RaisonSociale : ".$this->getRaisonSociale()."StatutJuridiqueEnt : ".$this->getStatutJuridiqueEnt()."AdresseEnt : ".$this->getAdresseEnt()."NumSiretEnt : ".$this->getNumSiretEnt()."TelEnt : ".$this->getTelEnt()."AssureurEnt : ".$this->getAssureurEnt()."NumSocietaire : ".$this->getNumSocietaire()."NomRepresentant : ".$this->getNomRepresentant()."PrenomRepresentant : ".$this->getPrenomRepresentant()."FctRepresentant : ".$this->getFctRepresentant()."TelRepresentant : ".$this->getTelRepresentant()."MailRepresentant : ".$this->getMailRepresentant()."IdVille : ".$this->getIdVille()."\n";
 	}
 
 

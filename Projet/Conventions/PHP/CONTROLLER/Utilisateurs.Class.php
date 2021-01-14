@@ -73,7 +73,7 @@ class Utilisateurs
 
 	public function setDatePeremption($datePeremption)
 	{
-		$this->_datePeremption = $datePeremption;
+		$this->_datePeremption=$datePeremption;
 	}
 
 	public function getIdRole()
@@ -116,7 +116,7 @@ class Utilisateurs
 	*/
 	public function toString()
 	{
-		return "IdUtilisateur : ".$this->getIdUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."PrenomUtilisateur : ".$this->getPrenomUtilisateur()."EmailUtilisateur : ".$this->getEmailUtilisateur()."MdpUtilisateur : ".$this->getMdpUtilisateur()."IdRole : ".$this->getIdRole()."\n";
+		return "IdUtilisateur : ".$this->getIdUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."PrenomUtilisateur : ".$this->getPrenomUtilisateur()."EmailUtilisateur : ".$this->getEmailUtilisateur()."MdpUtilisateur : ".$this->getMdpUtilisateur()."DatePeremption : ".$this->getDatePeremption()."IdRole : ".$this->getIdRole()."\n";
 	}
 
 
@@ -147,6 +147,4 @@ class Utilisateurs
 	{
 		return;
 	}
-
-
 }

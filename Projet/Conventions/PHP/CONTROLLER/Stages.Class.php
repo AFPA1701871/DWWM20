@@ -20,17 +20,7 @@ class Stages
 	private $_dateDeclarationDerog;
 	private $_sujetStage;
 	private $_travauxRealises;
-	private $_satisfactionEnt;
-	private $_remarqueEnt;
-	private $_perspectiveEmb;
-	private $_repTravauxDang1;
-	private $_repTravauxDang2;
-	private $_repTravauxDang3;
-	private $_repTravauxDang4;
-	private $_repTravauxDang5;
 	private $_objectifPAE;
-	private $_repTravauxDang6;
-	private $_autreRepTravauxDang;
 	private $_dateDebut;
 	private $_dateFin;
 	private $_idTuteur;
@@ -48,7 +38,7 @@ class Stages
 	{
 		$this->_idStage=$idStage;
 	}
-	
+
 	public function getEtape()
 	{
 		return $this->_etape;
@@ -56,8 +46,9 @@ class Stages
 
 	public function setEtape($etape)
 	{
-		$this->_etape = $etape;
+		$this->_etape=$etape;
 	}
+
 	public function getDateVisite()
 	{
 		return $this->_dateVisite;
@@ -188,86 +179,6 @@ class Stages
 		$this->_travauxRealises=$travauxRealises;
 	}
 
-	public function getSatisfactionEnt()
-	{
-		return $this->_satisfactionEnt;
-	}
-
-	public function setSatisfactionEnt($satisfactionEnt)
-	{
-		$this->_satisfactionEnt=$satisfactionEnt;
-	}
-
-	public function getRemarqueEnt()
-	{
-		return $this->_remarqueEnt;
-	}
-
-	public function setRemarqueEnt($remarqueEnt)
-	{
-		$this->_remarqueEnt=$remarqueEnt;
-	}
-
-	public function getPerspectiveEmb()
-	{
-		return $this->_perspectiveEmb;
-	}
-
-	public function setPerspectiveEmb($perspectiveEmb)
-	{
-		$this->_perspectiveEmb=$perspectiveEmb;
-	}
-
-	public function getRepTravauxDang1()
-	{
-		return $this->_repTravauxDang1;
-	}
-
-	public function setRepTravauxDang1($repTravauxDang1)
-	{
-		$this->_repTravauxDang1=$repTravauxDang1;
-	}
-
-	public function getRepTravauxDang2()
-	{
-		return $this->_repTravauxDang2;
-	}
-
-	public function setRepTravauxDang2($repTravauxDang2)
-	{
-		$this->_repTravauxDang2=$repTravauxDang2;
-	}
-
-	public function getRepTravauxDang3()
-	{
-		return $this->_repTravauxDang3;
-	}
-
-	public function setRepTravauxDang3($repTravauxDang3)
-	{
-		$this->_repTravauxDang3=$repTravauxDang3;
-	}
-
-	public function getRepTravauxDang4()
-	{
-		return $this->_repTravauxDang4;
-	}
-
-	public function setRepTravauxDang4($repTravauxDang4)
-	{
-		$this->_repTravauxDang4=$repTravauxDang4;
-	}
-
-	public function getRepTravauxDang5()
-	{
-		return $this->_repTravauxDang5;
-	}
-
-	public function setRepTravauxDang5($repTravauxDang5)
-	{
-		$this->_repTravauxDang5=$repTravauxDang5;
-	}
-
 	public function getObjectifPAE()
 	{
 		return $this->_objectifPAE;
@@ -276,26 +187,6 @@ class Stages
 	public function setObjectifPAE($objectifPAE)
 	{
 		$this->_objectifPAE=$objectifPAE;
-	}
-
-	public function getRepTravauxDang6()
-	{
-		return $this->_repTravauxDang6;
-	}
-
-	public function setRepTravauxDang6($repTravauxDang6)
-	{
-		$this->_repTravauxDang6=$repTravauxDang6;
-	}
-
-	public function getAutreRepTravauxDang()
-	{
-		return $this->_autreRepTravauxDang;
-	}
-
-	public function setAutreRepTravauxDang($autreRepTravauxDang)
-	{
-		$this->_autreRepTravauxDang=$autreRepTravauxDang;
 	}
 
 	public function getDateDebut()
@@ -368,7 +259,7 @@ class Stages
 	*/
 	public function toString()
 	{
-		return "IdStage : ".$this->getIdStage()."DateVisite : ".$this->getDateVisite()."NomVisiteur : ".$this->getNomVisiteur()."LieuRealisation : ".$this->getLieuRealisation()."Deplacement : ".$this->getDeplacement()."FrequenceDeplacement : ".$this->getFrequenceDeplacement()."ModeDeplacement : ".$this->getModeDeplacement()."AttFormReglement : ".$this->getAttFormReglement()."LibelleAttFormReg : ".$this->getLibelleAttFormReg()."VisiteMedical : ".$this->getVisiteMedical()."TravauxDang : ".$this->getTravauxDang()."DateDeclarationDerog : ".$this->getDateDeclarationDerog()."SujetStage : ".$this->getSujetStage()."TravauxRealises : ".$this->getTravauxRealises()."SatisfactionEnt : ".$this->getSatisfactionEnt()."RemarqueEnt : ".$this->getRemarqueEnt()."PerspectiveEmb : ".$this->getPerspectiveEmb()."RepTravauxDang1 : ".$this->getRepTravauxDang1()."RepTravauxDang2 : ".$this->getRepTravauxDang2()."RepTravauxDang3 : ".$this->getRepTravauxDang3()."RepTravauxDang4 : ".$this->getRepTravauxDang4()."RepTravauxDang5 : ".$this->getRepTravauxDang5()."ObjectifPAE : ".$this->getObjectifPAE()."RepTravauxDang6 : ".$this->getRepTravauxDang6()."AutreRepTravauxDang : ".$this->getAutreRepTravauxDang()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdTuteur : ".$this->getIdTuteur()."IdStagiaire : ".$this->getIdStagiaire()."\n";
+		return "IdStage : ".$this->getIdStage()."Etape : ".$this->getEtape()."DateVisite : ".$this->getDateVisite()."NomVisiteur : ".$this->getNomVisiteur()."LieuRealisation : ".$this->getLieuRealisation()."Deplacement : ".$this->getDeplacement()."FrequenceDeplacement : ".$this->getFrequenceDeplacement()."ModeDeplacement : ".$this->getModeDeplacement()."AttFormReglement : ".$this->getAttFormReglement()."LibelleAttFormReg : ".$this->getLibelleAttFormReg()."VisiteMedical : ".$this->getVisiteMedical()."TravauxDang : ".$this->getTravauxDang()."DateDeclarationDerog : ".$this->getDateDeclarationDerog()."SujetStage : ".$this->getSujetStage()."TravauxRealises : ".$this->getTravauxRealises()."ObjectifPAE : ".$this->getObjectifPAE()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdTuteur : ".$this->getIdTuteur()."IdStagiaire : ".$this->getIdStagiaire()."\n";
 	}
 
 
@@ -399,6 +290,4 @@ class Stages
 	{
 		return;
 	}
-
-	
 }

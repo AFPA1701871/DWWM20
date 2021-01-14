@@ -110,7 +110,6 @@ CREATE TABLE Entreprises(
         statutJuridiqueEnt Varchar (50) NOT NULL ,
         adresseEnt         Varchar (50) NOT NULL ,
         numSiretEnt        Varchar (14) NOT NULL ,
-        indexSiret         Int (50) NOT NULL,
         telEnt             Varchar (10) NOT NULL ,
         assureurEnt        Varchar (50) NOT NULL ,
         numSocietaire      Varchar (20) NOT NULL ,
@@ -210,7 +209,7 @@ CREATE TABLE LibelleTravauxDangereux
 (
     idLibelleTravauxDangereux   Int Auto_increment  NOT NULL PRIMARY KEY,
     ordreTravaux INT NOT NULL , 
-    libelleTravaux VARCHAR(50) NOT NULL  
+    libelleTravaux VARCHAR(100) NOT NULL  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE ValeurTravauxDangereux
@@ -244,7 +243,7 @@ CREATE TABLE LibelleComportementsProfessionnels
 (
     idLibelleComportementProfessionnel   Int  Auto_increment  NOT NULL PRIMARY KEY,
     ordreComportement INT NOT NULL , 
-    libelleComportement VARCHAR(40) NOT NULL  
+    libelleComportement VARCHAR(100) NOT NULL  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE ValeurComportementsProfessionnels

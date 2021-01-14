@@ -8,7 +8,7 @@ var_dump($obj);
 echo $obj->toString();
 
 echo "ajout de l'objet". "<br>";
-$newObj = new Utilisateurs(["nomUtilisateur" => "([value 1])", "prenomUtilisateur" => "([value 2])", "emailUtilisateur" => "([value 3])", "mdpUtilisateur" => "([value 4])", "idRole" => "([value 5])"]);
+$newObj = new Utilisateurs(["nomUtilisateur" => "([value 1])", "prenomUtilisateur" => "([value 2])", "emailUtilisateur" => "([value 3])", "mdpUtilisateur" => "([value 4])", "datePeremption" => "([value 5])", "idRole" => "([value 6])"]);
 var_dump(UtilisateursManager::add($newObj));
 
 echo "Liste des objets" . "<br>";

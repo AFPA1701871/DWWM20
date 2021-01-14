@@ -5,12 +5,11 @@ class EntreprisesManager
 	public static function add(Entreprises $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO Entreprises (raisonSociale,statutJuridiqueEnt,adresseEnt,numSiretEnt,indexSiret,telEnt,assureurEnt,numSocietaire,nomRepresentant,prenomRepresentant,fctRepresentant,telRepresentant,mailRepresentant,idVille) VALUES (:raisonSociale,:statutJuridiqueEnt,:adresseEnt,:numSiretEnt,:indexSiret,:telEnt,:assureurEnt,:numSocietaire,:nomRepresentant,:prenomRepresentant,:fctRepresentant,:telRepresentant,:mailRepresentant,:idVille)");
+		$q=$db->prepare("INSERT INTO Entreprises (raisonSociale,statutJuridiqueEnt,adresseEnt,numSiretEnt,telEnt,assureurEnt,numSocietaire,nomRepresentant,prenomRepresentant,fctRepresentant,telRepresentant,mailRepresentant,idVille) VALUES (:raisonSociale,:statutJuridiqueEnt,:adresseEnt,:numSiretEnt,:telEnt,:assureurEnt,:numSocietaire,:nomRepresentant,:prenomRepresentant,:fctRepresentant,:telRepresentant,:mailRepresentant,:idVille)");
 		$q->bindValue(":raisonSociale", $obj->getRaisonSociale());
 		$q->bindValue(":statutJuridiqueEnt", $obj->getStatutJuridiqueEnt());
 		$q->bindValue(":adresseEnt", $obj->getAdresseEnt());
 		$q->bindValue(":numSiretEnt", $obj->getNumSiretEnt());
-		$q->bindValue(":indexSiret", $obj->getIndexSiret());
 		$q->bindValue(":telEnt", $obj->getTelEnt());
 		$q->bindValue(":assureurEnt", $obj->getAssureurEnt());
 		$q->bindValue(":numSocietaire", $obj->getNumSocietaire());
@@ -26,13 +25,12 @@ class EntreprisesManager
 	public static function update(Entreprises $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE Entreprises SET idEntreprise=:idEntreprise,raisonSociale=:raisonSociale,statutJuridiqueEnt=:statutJuridiqueEnt,adresseEnt=:adresseEnt,numSiretEnt=:numSiretEnt,indexSiret=:indexSiret,telEnt=:telEnt,assureurEnt=:assureurEnt,numSocietaire=:numSocietaire,nomRepresentant=:nomRepresentant,prenomRepresentant=:prenomRepresentant,fctRepresentant=:fctRepresentant,telRepresentant=:telRepresentant,mailRepresentant=:mailRepresentant,idVille=:idVille WHERE idEntreprise=:idEntreprise");
+		$q=$db->prepare("UPDATE Entreprises SET idEntreprise=:idEntreprise,raisonSociale=:raisonSociale,statutJuridiqueEnt=:statutJuridiqueEnt,adresseEnt=:adresseEnt,numSiretEnt=:numSiretEnt,telEnt=:telEnt,assureurEnt=:assureurEnt,numSocietaire=:numSocietaire,nomRepresentant=:nomRepresentant,prenomRepresentant=:prenomRepresentant,fctRepresentant=:fctRepresentant,telRepresentant=:telRepresentant,mailRepresentant=:mailRepresentant,idVille=:idVille WHERE idEntreprise=:idEntreprise");
 		$q->bindValue(":idEntreprise", $obj->getIdEntreprise());
 		$q->bindValue(":raisonSociale", $obj->getRaisonSociale());
 		$q->bindValue(":statutJuridiqueEnt", $obj->getStatutJuridiqueEnt());
 		$q->bindValue(":adresseEnt", $obj->getAdresseEnt());
 		$q->bindValue(":numSiretEnt", $obj->getNumSiretEnt());
-		$q->bindValue(":indexSiret", $obj->getIndexSiret());
 		$q->bindValue(":telEnt", $obj->getTelEnt());
 		$q->bindValue(":assureurEnt", $obj->getAssureurEnt());
 		$q->bindValue(":numSocietaire", $obj->getNumSocietaire());

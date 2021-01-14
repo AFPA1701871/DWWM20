@@ -8,7 +8,7 @@ var_dump($obj);
 echo $obj->toString();
 
 echo "ajout de l'objet". "<br>";
-$newObj = new Evaluations(["dateEvaluation" => "([value 1])", "objectifAcquisition" => "([value 2])", "comportementMt" => "([value 3])", "evalComportement" => "([value 4])", "libelleAcquis1" => "([value 5])", "libelleAcquis2" => "([value 6])", "libelleAcquis3" => "([value 7])", "libelleAcquis4" => "([value 8])", "libelleAcquis5" => "([value 9])", "libelleAcquis6" => "([value 10])", "libelleAcquis7" => "([value 11])", "libelleAcquis8" => "([value 12])", "libelleAcquis9" => "([value 13])", "libelleAcquis10" => "([value 14])", "acquis1" => "([value 15])", "acquis2" => "([value 16])", "acquis3" => "([value 17])", "acquis4" => "([value 18])", "acquis5" => "([value 19])", "acquis6" => "([value 20])", "acquis7" => "([value 21])", "acquis8" => "([value 22])", "acquis9" => "([value 23])", "acquis10" => "([value 24])"]);
+$newObj = new Evaluations(["dateEvaluation" => "([value 1])", "objectifAcquisition" => "([value 2])", "comportementMt" => "([value 3])", "satisfactionEnt" => "([value 4])", "remarqueEnt" => "([value 5])", "perspectiveEmb" => "([value 6])"]);
 var_dump(EvaluationsManager::add($newObj));
 
 echo "Liste des objets" . "<br>";
