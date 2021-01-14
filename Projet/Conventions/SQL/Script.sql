@@ -151,7 +151,7 @@ CREATE TABLE Stages(
         frequenceDeplacement Varchar (200) NOT NULL ,
         modeDeplacement      Varchar (200) NOT NULL ,
         attFormReglement     Bool NOT NULL ,
-        libelleAttFormReg    Varchar (200) NOT NULL ,
+        libelleAttFormReg    Varchar (200) ,
         visiteMedical        Bool NOT NULL ,
         travauxDang          Bool NOT NULL ,
         dateDeclarationDerog Date NOT NULL ,
@@ -197,11 +197,11 @@ CREATE TABLE evaluations
 (
         idStage              Int    NOT NULL PRIMARY KEY,
         dateEvaluation       Date NOT NULL ,
-        objectifAcquisition  Int NOT NULL ,
-        comportementMt       Int NOT NULL ,
-		satisfactionEnt      Int NOT NULL ,
+        objectifAcquisition  Int NOT NULL COMMENT "1:totalement 2:partiellement 3:non",
+        comportementMt       Int NOT NULL COMMENT "1:adapté 2:en progression 3:peu adapté",
+		satisfactionEnt      Int NOT NULL COMMENT "1:satisfaite 2: peu satisfaite 3:pas satisfaite",
         remarqueEnt          Char(250) NOT NULL ,
-        perspectiveEmb       Int NOT NULL 
+        perspectiveEmb       Int NOT NULL COMMENT "1:CDI 2:CDD 3:Alternance 4:Neant"
 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
@@ -217,7 +217,7 @@ CREATE TABLE ValeurTravauxDangereux
     idTravauxDangereux  Int Auto_increment NOT NULL PRIMARY KEY,
     idStage   Int   NOT NULL,
     idLibelleTravauxDangereux INT NOT NULL , 
-    valeurTravaux  Int
+    valeurTravaux  Int 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
