@@ -66,9 +66,7 @@ class UtilisateursManager
 	public static function getByEmailUtilisateur($emailUtilisateur)
     {
         $db = DbConnect::getDb();
-        $mail = (int) $emailUtilisateur;
-        $liste = [];
-        $q = $db->query("SELECT * FROM Utilisateurs where emailUtilisateur=$mail");
+        $q = $db->query("SELECT * FROM Utilisateurs where emailUtilisateur='".$emailUtilisateur."'");
         $results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{
