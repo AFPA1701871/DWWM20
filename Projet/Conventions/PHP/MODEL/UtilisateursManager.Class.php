@@ -69,11 +69,15 @@ class UtilisateursManager
         $mail = (int) $emailUtilisateur;
         $liste = [];
         $q = $db->query("SELECT * FROM Utilisateurs where emailUtilisateur=$mail");
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-            if ($donnees != false) {
-                $liste[] = new Utilisateurs($donnees);
-            }
-        }return $liste;
+        $results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Utilisateurs($results);
+		}
+		else
+		{
+			return false;
+		}
 
 	}
 }
