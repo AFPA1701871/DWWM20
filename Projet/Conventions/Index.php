@@ -36,6 +36,10 @@ $routes=[
 	"TesttuteursManager"=>["PHP/MODEL/TESTMANAGER/","TesttuteursManager","Test de tuteurs"],
 	"TestutilisateursManager"=>["PHP/MODEL/TESTMANAGER/","TestutilisateursManager","Test de utilisateurs"],
 	"TestvillesManager"=>["PHP/MODEL/TESTMANAGER/","TestvillesManager","Test de villes"],
+		
+	"FormConnexion" => ["PHP/VIEW/", "FormConnexion", "Identification"],
+	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification"],
+	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification"],
 ];
 
 if(isset($_GET["page"]))
