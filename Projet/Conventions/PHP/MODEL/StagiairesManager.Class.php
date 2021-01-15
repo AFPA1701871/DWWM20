@@ -68,7 +68,7 @@ class StagiairesManager
         $db = DbConnect::getDb();
         $num = (int) $numBenefStagiaire;
         $liste = [];
-        $q = $db->query("SELECT * FROM Stagiaires where numBenefStagiaire=$num");
+        $q = $db->query("SELECT * FROM Stagiaires where numBenefStagiaire=".$num);
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
             if ($donnees != false) {
                 $liste[] = new Stagiaires($donnees);
