@@ -29,13 +29,27 @@ img
 {
     justify-content:center;
     align-items:center;
+    text-align: center;
 }
 .espaceHor
 {
     flex:none;
     height:1em;
 }
+.erreur{
+    text-align: center;
+    padding: 0.5em;
+    color: var(--Rouge);
+    text-shadow: 0.1em 0.1em 0.1em 0.1em var(--CouleurTexte);
+}
 
+.grande{
+    flex:5;
+}
+
+.info{
+    margin:1.5em;
+}
 /******* Boutons ********/
 .bouton
 {
