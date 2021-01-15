@@ -5,26 +5,26 @@
     <!-- <input type="text" value="$_SESSION['utilisateur']->getPrenomStagiaire()"> -->
     <form action="" method="POST">
 
-        <div class=" center">
-            <div class="info colonne center">
+        <div class=" ">
+            <div class="info colonne ">
                 <label for="prenom">Prenom :</label>
                 <input type="text" id="prenom" name="prenom" value="" required pattern="[a-zA-Z- ]{3,}">
             </div>
-            <div class="info colonne center">
+            <div class="info colonne ">
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" name="nom" value="" required pattern="[a-zA-Z- ]{3,}">
             </div>
         </div>
         <div >
-            <div class="info center centerItem colonne">
+            <div class="info  centerItem colonne">
                 <label for="homme">Homme</label>
                 <input type="radio" required id="genre" name="genre" value="H">
             </div>
-            <div class="info center centerItem colonne">
+            <div class="info  centerItem colonne">
                 <label for="femme">Femme</label>
                 <input type="radio" required id="genre" name="genre" value="F">
             </div>
-            <div class="info colonne center grande">
+            <div class="info colonne  grande">
                 <label for="numSecu">Votre Numero de securite social :</label>
                 <input type="text" id="numSecu" name="numSecu" required pattern="\d{13}" value="">
             </div>
