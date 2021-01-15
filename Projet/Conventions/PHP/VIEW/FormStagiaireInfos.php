@@ -1,6 +1,6 @@
 
 
-<section>
+<section class="grande">
 
     <!-- <input type="text" value="$_SESSION['utilisateur']->getPrenomStagiaire()"> -->
     <form action="" method="POST">

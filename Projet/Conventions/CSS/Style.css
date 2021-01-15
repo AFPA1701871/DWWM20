@@ -5,16 +5,20 @@ body
     min-height:100%;
     background:var(--FondPage);
 }
-div,header,footer
+div,header,footer,body,nav,section,form
 {
     display:flex;
     flex:1;
+    justify-content:center;
 }
 img
 {
     width:100%;
 }
-.colonne
+.row{
+    width:50vw;
+}
+.colonne, form
 {
     flex-direction:column;
 }
