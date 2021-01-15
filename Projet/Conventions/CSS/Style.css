@@ -15,13 +15,12 @@ img
 {
     width:100%;
 }
-.row{
-    width:50vw;
-}
+
 .colonne, form
 {
     flex-direction:column;
 }
+
 .centre
 {
     justify-content:center;
@@ -40,13 +39,23 @@ img
     text-shadow: 0.1em 0.1em 0.1em 0.1em var(--CouleurTexte);
 }
 
-.grande{
+.grande, section {
     flex:5;
 }
 
 .info{
     margin:1.5em;
 }
+/******* Form ********/
+label{
+    color: var(--CouleurTexte);
+    text-align: center;
+}
+
+.centerItem{
+    align-items:center;
+}
+
 /******* Boutons ********/
 .bouton
 {
