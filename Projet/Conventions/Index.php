@@ -42,6 +42,7 @@ $routes=[
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification"],
 
 	"StagiaireInfos" => ["PHP/VIEW/", "FormStagiaireInfos", "Identification"],
+	"FormEntrepriseInfos" => ["PHP/VIEW/", "FormEntrepriseInfos", "Identification"],
 ];
 
 if(isset($_GET["page"]))
