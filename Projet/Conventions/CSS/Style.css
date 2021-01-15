@@ -55,7 +55,10 @@ label{
 .centerItem{
     align-items:center;
 }
-
+a{
+    color: var(--CouleurTexte);
+    text-decoration: none
+}
 /******* Boutons ********/
 .bouton
 {
@@ -71,7 +74,6 @@ label{
 {
     border:2px solid var(--CouleurTexte);
     color: var(--BordureBouton);
-    font-size:1.2em;
 }
 
 /********* input & Select *********/

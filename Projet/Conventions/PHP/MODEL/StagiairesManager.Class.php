@@ -76,4 +76,19 @@ class StagiairesManager
         }return $liste;
 
 	}
+	public static function getByEmailStagiaire($email)
+    {
+        $db = DbConnect::getDb();
+        $q = $db->query("SELECT * FROM Stagiaires where emailStagiaire='".$email."'");
+        $results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Utilisateurs($results);
+		}
+		else
+		{
+			return false;
+		}
+
+	}
 }

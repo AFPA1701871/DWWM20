@@ -75,4 +75,19 @@ class TuteursManager
         }return $liste;
 
 	}
+	public static function getByEmailTuteur($email)
+    {
+        $db = DbConnect::getDb();
+        $q = $db->query("SELECT * FROM Tuteurs where emailTuteur='".$email."'");
+        $results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Utilisateurs($results);
+		}
+		else
+		{
+			return false;
+		}
+
+	}
 }
