@@ -74,7 +74,9 @@ CREATE TABLE Stagiaires(
         prenomStagiaire        Varchar (50) NOT NULL ,
         numSecuStagiaire       Varchar (15) NOT NULL ,
         numBenefStagiaire      Varchar (15) NOT NULL ,
-        dateNaissanceStagiaire Date NOT NULL
+        dateNaissanceStagiaire Date NOT NULL,
+        emailStagiaire  Varchar (50) NOT NULL ,
+        UNIQUE KEY `email` (`emailStagiaire`)
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
@@ -133,7 +135,7 @@ CREATE TABLE Tuteurs(
         prenomTuteur   Varchar (50) NOT NULL ,
         fonctionTuteur Varchar (100) NOT NULL ,
         telTuteur      Varchar (10) NOT NULL ,
-        mailTuteur     Varchar (100) NOT NULL ,
+        emailTuteur     Varchar (100) NOT NULL ,
         idEntreprise   Int NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
@@ -348,3 +350,7 @@ ALTER TABLE ValeurAcquis
 ADD CONSTRAINT FK_ValeurAcquis_Stages
 FOREIGN KEY (idStage)
 REFERENCES Stages(idStage);
+
+ALTER TABLE `conventions`.`utilisateurs` ADD INDEX `emailU` (`emailUtilisateur`);
+ALTER TABLE `conventions`.`stagiaires` ADD INDEX `emailS` (`emailStagiaire`);
+ALTER TABLE `conventions`.`tuteurs` ADD INDEX `emailT` (`emailTuteur`);
