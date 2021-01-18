@@ -449,3 +449,13 @@ INSERT INTO `departements`  VALUES
 
 UPDATE `villes` SET `idDepartement`=substr(`codePostal`,1,2);
 UPDATE `villes` SET `idDepartement`='2A' where idDepartement=20;
+
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '5', '2021-05-11', '2021-05-15', '2021-07-30', 'sdvujgdhjsdvsdvsdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '5', '2021-05-11', '2021-05-25', '2021-06-25', 'sdvsduyjghjvsdvsdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '1', '2021-07-11', '2021-08-01', '2021-08-30', 'sdvstyuedrgfhdvsdvsdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '21', '2021-02-11', '2021-02-15', '2021-02-29', 'sdvdfdvsdvsdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '21', '2021-05-11', '2021-12-01', '2021-12-30', 'sdvxaasdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '21', '2021-05-11', '2022-01-02', '2022-01-28', 'sdvwxfuyfgusdvsdrv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '8', '2022-05-11', '2022-12-01', '2022-12-30', 'sdvxfzzartedvsdv');
+INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`, `dateFinPAE`, `dateRapportSuivi`, `objectifPAE`) VALUES (NULL, '21', '2022-05-11', '2022-01-02', '2022-01-28', 'sdvwxfdvsdvsdv');
+

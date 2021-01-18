@@ -264,6 +264,20 @@ CREATE TABLE ValeurAcquis
     valeurAcquis INT  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
+CREATE TABLE PeriodesStages(
+        idPeriode Int Auto_increment NOT NULL PRIMARY KEY ,
+        idSessionFormation Int NOT NULL ,
+        dateDebutPAE Date NOT NULL ,
+        dateFinPAE Date NOT NULL ,
+        dateRapportSuivi Date NOT NULL ,
+        objectifPAE Text NOT NULL
+)ENGINE=InnoDB, CHARSET = UTF8;
+
+ALTER TABLE PeriodesStages
+ADD CONSTRAINT FK_PeriodesStages_SessionFormation
+FOREIGN KEY (idSessionFormation)
+REFERENCES SessionFormation(idSessionFormation);
+
 ALTER TABLE SessionFormation
 ADD CONSTRAINT FK_SessionFormation_Formations
 FOREIGN KEY (idFormation)
