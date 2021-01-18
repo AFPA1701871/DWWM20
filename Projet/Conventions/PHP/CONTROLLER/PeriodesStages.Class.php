@@ -1,18 +1,29 @@
 <?php
 
-class SessionsFormations 
+class PeriodesStages 
 {
 
 	/*****************Attributs***************** */
 
+	private $_idPeriode;
 	private $_idSessionFormation;
-	private $_numOffreFormation;
-	private $_objectifPAE;
+	private $_dateDebutPAE;
+	private $_dateFinPAE;
 	private $_dateRapportSuivi;
-	private $_idFormation;
+	private $_objectifPAE;
 
 	/***************** Accesseurs ***************** */
 
+
+	public function getIdPeriode()
+	{
+		return $this->_idPeriode;
+	}
+
+	public function setIdPeriode($idPeriode)
+	{
+		$this->_idPeriode=$idPeriode;
+	}
 
 	public function getIdSessionFormation()
 	{
@@ -24,24 +35,24 @@ class SessionsFormations
 		$this->_idSessionFormation=$idSessionFormation;
 	}
 
-	public function getNumOffreFormation()
+	public function getDateDebutPAE()
 	{
-		return $this->_numOffreFormation;
+		return $this->_dateDebutPAE;
 	}
 
-	public function setNumOffreFormation($numOffreFormation)
+	public function setDateDebutPAE($dateDebutPAE)
 	{
-		$this->_numOffreFormation=$numOffreFormation;
+		$this->_dateDebutPAE=$dateDebutPAE;
 	}
 
-	public function getObjectifPAE()
+	public function getDateFinPAE()
 	{
-		return $this->_objectifPAE;
+		return $this->_dateFinPAE;
 	}
 
-	public function setObjectifPAE($objectifPAE)
+	public function setDateFinPAE($dateFinPAE)
 	{
-		$this->_objectifPAE=$objectifPAE;
+		$this->_dateFinPAE=$dateFinPAE;
 	}
 
 	public function getDateRapportSuivi()
@@ -54,14 +65,14 @@ class SessionsFormations
 		$this->_dateRapportSuivi=$dateRapportSuivi;
 	}
 
-	public function getIdFormation()
+	public function getObjectifPAE()
 	{
-		return $this->_idFormation;
+		return $this->_objectifPAE;
 	}
 
-	public function setIdFormation($idFormation)
+	public function setObjectifPAE($objectifPAE)
 	{
-		$this->_idFormation=$idFormation;
+		$this->_objectifPAE=$objectifPAE;
 	}
 
 	/*****************Constructeur***************** */
@@ -94,7 +105,7 @@ class SessionsFormations
 	*/
 	public function toString()
 	{
-		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."IdFormation : ".$this->getIdFormation()."\n";
+		return "IdPeriode : ".$this->getIdPeriode()."IdSessionFormation : ".$this->getIdSessionFormation()."DateDebutPAE : ".$this->getDateDebutPAE()."DateFinPAE : ".$this->getDateFinPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."ObjectifPAE : ".$this->getObjectifPAE()."\n";
 	}
 
 

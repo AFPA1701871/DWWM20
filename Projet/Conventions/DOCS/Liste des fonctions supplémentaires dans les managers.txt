@@ -1,0 +1,13 @@
+departements.getByRegion
+entreprises.getByNumSiret
+entreprises.getByEmail
+tuteurs.getByEmail
+stagiaires.getByEmail
+utilisateurs.getByEmail
+stages.getByStagiaire
+stages.getByTuteur
+tuteurs.getByEntreprise
+animations.getByFormation
+animations.getByUtilisateur
+sessions.getByFormation
+participations.getByStagiaire

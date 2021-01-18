@@ -1,18 +1,48 @@
 <?php
 
-class SessionsFormations 
+class Participations 
 {
 
 	/*****************Attributs***************** */
 
+	private $_idParticipation;
+	private $_dateDebut;
+	private $_dateFin;
 	private $_idSessionFormation;
-	private $_numOffreFormation;
-	private $_objectifPAE;
-	private $_dateRapportSuivi;
-	private $_idFormation;
+	private $_idStagiaire;
 
 	/***************** Accesseurs ***************** */
 
+
+	public function getIdParticipation()
+	{
+		return $this->_idParticipation;
+	}
+
+	public function setIdParticipation($idParticipation)
+	{
+		$this->_idParticipation=$idParticipation;
+	}
+
+	public function getDateDebut()
+	{
+		return $this->_dateDebut;
+	}
+
+	public function setDateDebut($dateDebut)
+	{
+		$this->_dateDebut=$dateDebut;
+	}
+
+	public function getDateFin()
+	{
+		return $this->_dateFin;
+	}
+
+	public function setDateFin($dateFin)
+	{
+		$this->_dateFin=$dateFin;
+	}
 
 	public function getIdSessionFormation()
 	{
@@ -24,44 +54,14 @@ class SessionsFormations
 		$this->_idSessionFormation=$idSessionFormation;
 	}
 
-	public function getNumOffreFormation()
+	public function getIdStagiaire()
 	{
-		return $this->_numOffreFormation;
+		return $this->_idStagiaire;
 	}
 
-	public function setNumOffreFormation($numOffreFormation)
+	public function setIdStagiaire($idStagiaire)
 	{
-		$this->_numOffreFormation=$numOffreFormation;
-	}
-
-	public function getObjectifPAE()
-	{
-		return $this->_objectifPAE;
-	}
-
-	public function setObjectifPAE($objectifPAE)
-	{
-		$this->_objectifPAE=$objectifPAE;
-	}
-
-	public function getDateRapportSuivi()
-	{
-		return $this->_dateRapportSuivi;
-	}
-
-	public function setDateRapportSuivi($dateRapportSuivi)
-	{
-		$this->_dateRapportSuivi=$dateRapportSuivi;
-	}
-
-	public function getIdFormation()
-	{
-		return $this->_idFormation;
-	}
-
-	public function setIdFormation($idFormation)
-	{
-		$this->_idFormation=$idFormation;
+		$this->_idStagiaire=$idStagiaire;
 	}
 
 	/*****************Constructeur***************** */
@@ -94,7 +94,7 @@ class SessionsFormations
 	*/
 	public function toString()
 	{
-		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."IdFormation : ".$this->getIdFormation()."\n";
+		return "IdParticipation : ".$this->getIdParticipation()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdSessionFormation : ".$this->getIdSessionFormation()."IdStagiaire : ".$this->getIdStagiaire()."\n";
 	}
 
 

@@ -1,67 +1,67 @@
 <?php
 
-class SessionsFormations 
+class ValeursAcquis 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idSessionFormation;
-	private $_numOffreFormation;
-	private $_objectifPAE;
-	private $_dateRapportSuivi;
-	private $_idFormation;
+	private $_idValeurAcquis;
+	private $_idStage;
+	private $_ordreAcquis;
+	private $_libelleAcquis;
+	private $_valeurAcquis;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdSessionFormation()
+	public function getIdValeurAcquis()
 	{
-		return $this->_idSessionFormation;
+		return $this->_idValeurAcquis;
 	}
 
-	public function setIdSessionFormation($idSessionFormation)
+	public function setIdValeurAcquis($idValeurAcquis)
 	{
-		$this->_idSessionFormation=$idSessionFormation;
+		$this->_idValeurAcquis=$idValeurAcquis;
 	}
 
-	public function getNumOffreFormation()
+	public function getIdStage()
 	{
-		return $this->_numOffreFormation;
+		return $this->_idStage;
 	}
 
-	public function setNumOffreFormation($numOffreFormation)
+	public function setIdStage($idStage)
 	{
-		$this->_numOffreFormation=$numOffreFormation;
+		$this->_idStage=$idStage;
 	}
 
-	public function getObjectifPAE()
+	public function getOrdreAcquis()
 	{
-		return $this->_objectifPAE;
+		return $this->_ordreAcquis;
 	}
 
-	public function setObjectifPAE($objectifPAE)
+	public function setOrdreAcquis($ordreAcquis)
 	{
-		$this->_objectifPAE=$objectifPAE;
+		$this->_ordreAcquis=$ordreAcquis;
 	}
 
-	public function getDateRapportSuivi()
+	public function getLibelleAcquis()
 	{
-		return $this->_dateRapportSuivi;
+		return $this->_libelleAcquis;
 	}
 
-	public function setDateRapportSuivi($dateRapportSuivi)
+	public function setLibelleAcquis($libelleAcquis)
 	{
-		$this->_dateRapportSuivi=$dateRapportSuivi;
+		$this->_libelleAcquis=$libelleAcquis;
 	}
 
-	public function getIdFormation()
+	public function getValeurAcquis()
 	{
-		return $this->_idFormation;
+		return $this->_valeurAcquis;
 	}
 
-	public function setIdFormation($idFormation)
+	public function setValeurAcquis($valeurAcquis)
 	{
-		$this->_idFormation=$idFormation;
+		$this->_valeurAcquis=$valeurAcquis;
 	}
 
 	/*****************Constructeur***************** */
@@ -94,7 +94,7 @@ class SessionsFormations
 	*/
 	public function toString()
 	{
-		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."IdFormation : ".$this->getIdFormation()."\n";
+		return "IdValeurAcquis : ".$this->getIdValeurAcquis()."IdStage : ".$this->getIdStage()."OrdreAcquis : ".$this->getOrdreAcquis()."LibelleAcquis : ".$this->getLibelleAcquis()."ValeurAcquis : ".$this->getValeurAcquis()."\n";
 	}
 
 

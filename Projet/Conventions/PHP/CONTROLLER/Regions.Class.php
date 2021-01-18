@@ -1,56 +1,45 @@
 <?php
 
-class Villes 
+class Regions 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idVille;
-	private $_nomVille;
-	private $_codePostal;
-	private $_idDepartement;
+	private $_idRegion;
+	private $_libelleRegion;
+	private $_nb_departs;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdVille()
+	public function getIdRegion()
 	{
-		return $this->_idVille;
+		return $this->_idRegion;
 	}
 
-	public function setIdVille($idVille)
+	public function setIdRegion($idRegion)
 	{
-		$this->_idVille=$idVille;
+		$this->_idRegion=$idRegion;
 	}
 
-	public function getNomVille()
+	public function getLibelleRegion()
 	{
-		return $this->_nomVille;
+		return $this->_libelleRegion;
 	}
 
-	public function setNomVille($nomVille)
+	public function setLibelleRegion($libelleRegion)
 	{
-		$this->_nomVille=$nomVille;
+		$this->_libelleRegion=$libelleRegion;
 	}
 
-	public function getCodePostal()
+	public function getNb_departs()
 	{
-		return $this->_codePostal;
+		return $this->_nb_departs;
 	}
 
-	public function setCodePostal($codePostal)
+	public function setNb_departs($nb_departs)
 	{
-		$this->_codePostal=$codePostal;
-	}
-
-	public function getIdDepartement()
-	{
-		return $this->_idDepartement;
-	}
-
-	public function setIdDepartement($idDepartement)
-	{
-		$this->_idDepartement=$idDepartement;
+		$this->_nb_departs=$nb_departs;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,7 +72,7 @@ class Villes
 	*/
 	public function toString()
 	{
-		return "IdVille : ".$this->getIdVille()."NomVille : ".$this->getNomVille()."CodePostal : ".$this->getCodePostal()."IdDepartement : ".$this->getIdDepartement()."\n";
+		return "IdRegion : ".$this->getIdRegion()."LibelleRegion : ".$this->getLibelleRegion()."Nb_departs : ".$this->getNb_departs()."\n";
 	}
 
 

@@ -1,57 +1,35 @@
 <?php
 
-class SessionsFormations 
+class Animations 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idSessionFormation;
-	private $_numOffreFormation;
-	private $_objectifPAE;
-	private $_dateRapportSuivi;
+	private $_idAnimation;
+	private $_idUtilisateur;
 	private $_idFormation;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdSessionFormation()
+	public function getIdAnimation()
 	{
-		return $this->_idSessionFormation;
+		return $this->_idAnimation;
 	}
 
-	public function setIdSessionFormation($idSessionFormation)
+	public function setIdAnimation($idAnimation)
 	{
-		$this->_idSessionFormation=$idSessionFormation;
+		$this->_idAnimation=$idAnimation;
 	}
 
-	public function getNumOffreFormation()
+	public function getIdUtilisateur()
 	{
-		return $this->_numOffreFormation;
+		return $this->_idUtilisateur;
 	}
 
-	public function setNumOffreFormation($numOffreFormation)
+	public function setIdUtilisateur($idUtilisateur)
 	{
-		$this->_numOffreFormation=$numOffreFormation;
-	}
-
-	public function getObjectifPAE()
-	{
-		return $this->_objectifPAE;
-	}
-
-	public function setObjectifPAE($objectifPAE)
-	{
-		$this->_objectifPAE=$objectifPAE;
-	}
-
-	public function getDateRapportSuivi()
-	{
-		return $this->_dateRapportSuivi;
-	}
-
-	public function setDateRapportSuivi($dateRapportSuivi)
-	{
-		$this->_dateRapportSuivi=$dateRapportSuivi;
+		$this->_idUtilisateur=$idUtilisateur;
 	}
 
 	public function getIdFormation()
@@ -94,7 +72,7 @@ class SessionsFormations
 	*/
 	public function toString()
 	{
-		return "IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."ObjectifPAE : ".$this->getObjectifPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."IdFormation : ".$this->getIdFormation()."\n";
+		return "IdAnimation : ".$this->getIdAnimation()."IdUtilisateur : ".$this->getIdUtilisateur()."IdFormation : ".$this->getIdFormation()."\n";
 	}
 
 
