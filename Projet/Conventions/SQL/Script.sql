@@ -97,8 +97,6 @@ CREATE TABLE Formations(
 CREATE TABLE SessionFormation(
         idSessionFormation Int  Auto_increment  NOT NULL PRIMARY KEY,
         numOffreFormation  Varchar (50) NOT NULL ,
-        objectifPAE        Text NOT NULL ,
-        dateRapportSuivi     Date NOT NULL ,
         idFormation        Int NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
@@ -133,10 +131,10 @@ CREATE TABLE Tuteurs(
         idTuteur       Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomTuteur      Varchar (50) NOT NULL ,
         prenomTuteur   Varchar (50) NOT NULL ,
-        fonctionTuteur Varchar (100) NOT NULL ,
-        telTuteur      Varchar (10) NOT NULL ,
+        fonctionTuteur Varchar (100) ,
+        telTuteur      Varchar (10)  ,
         emailTuteur     Varchar (100) NOT NULL ,
-        idEntreprise   Int NOT NULL
+        idEntreprise   Int 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -146,20 +144,20 @@ CREATE TABLE Tuteurs(
 CREATE TABLE Stages(
         idStage              Int  Auto_increment  NOT NULL PRIMARY KEY,
 		etape				 Int NOT NULL,
-        dateVisite           Date NOT NULL ,
-        nomVisiteur          Varchar (200) NOT NULL ,    
-        lieuRealisation      Varchar (200) NOT NULL ,
-        deplacement          Bool NOT NULL ,
-        frequenceDeplacement Varchar (200) NOT NULL ,
-        modeDeplacement      Varchar (200) NOT NULL ,
-        attFormReglement     Bool NOT NULL ,
+        dateVisite           Date  ,
+        nomVisiteur          Varchar (200)  ,    
+        lieuRealisation      Varchar (200)  ,
+        deplacement          Bool  ,
+        frequenceDeplacement Varchar (200)  ,
+        modeDeplacement      Varchar (200)  ,
+        attFormReglement     Bool  ,
         libelleAttFormReg    Varchar (200) ,
-        visiteMedical        Bool NOT NULL ,
-        travauxDang          Bool NOT NULL ,
-        dateDeclarationDerog Date NOT NULL ,
-        sujetStage           Text NOT NULL ,
-        travauxRealises      Text NOT NULL ,
-        objectifPAE          Text NOT NULL ,
+        visiteMedical        Bool  ,
+        travauxDang          Bool  ,
+        dateDeclarationDerog Date  ,
+        sujetStage           Text  ,
+        travauxRealises      Text  ,
+        objectifPAE          Text  ,
         dateDebut            Date NOT NULL ,
         dateFin              Date NOT NULL ,
         idTuteur  Int   NOT NULL ,
@@ -354,3 +352,54 @@ REFERENCES Stages(idStage);
 ALTER TABLE `conventions`.`utilisateurs` ADD INDEX `emailU` (`emailUtilisateur`);
 ALTER TABLE `conventions`.`stagiaires` ADD INDEX `emailS` (`emailStagiaire`);
 ALTER TABLE `conventions`.`tuteurs` ADD INDEX `emailT` (`emailTuteur`);
+
+CREATE TABLE PeriodesStages(
+        idPeriode Int Auto_increment NOT NULL PRIMARY KEY ,
+        idSessionFormation Int NOT NULL ,
+        dateDebutPAE Date NOT NULL ,
+        dateFinPAE Date NOT NULL ,
+        dateRapportSuivi Date NOT NULL ,
+        objectifPAE Text 
+)ENGINE=InnoDB, CHARSET = UTF8;
+
+ALTER TABLE PeriodesStages
+ADD CONSTRAINT FK_PeriodesStages_SessionFormation
+FOREIGN KEY (idSessionFormation)
+REFERENCES SessionFormation(idSessionFormation);
+
+CREATE VIEW  stagiaireFormation as
+SELECT
+    f.`idFormation`,
+    f.`libelleFormation`,
+    s.`idSessionFormation`,
+    s.`numOffreFormation`,
+    p.`idPeriode`,
+    p.`dateDebutPAE`,
+    p.`dateFinPAE`,
+    p.`dateRapportSuivi`,
+    p.`objectifPAE`,
+    pa.`idParticipation`,
+    pa.`dateDebut`,
+    pa.`dateFin`,
+    st.`idStagiaire`,
+    st.`genreStagiaire`,
+    st.`nomStagiaire`,
+    st.`prenomStagiaire`,
+    st.`numSecuStagiaire`,
+    st.`numBenefStagiaire`,
+    st.`dateNaissanceStagiaire`,
+    st.`emailStagiaire`
+FROM
+    `formations` AS f
+INNER JOIN sessionformation AS s
+ON
+    f.idFormation = s.idsessionFormation
+INNER JOIN periodesstages AS p
+ON
+    s.idsessionFormation = p.idSessionFormation
+INNER JOIN participation AS pa
+ON
+    pa.idsessionFormation = s.idsessionFormation
+INNER JOIN stagiaires AS st
+ON
+    st.idStagiaire = pa.idStagiaire
