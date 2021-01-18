@@ -393,7 +393,7 @@ FROM
     `formations` AS f
 INNER JOIN sessionformation AS s
 ON
-    f.idFormation = s.idsessionFormation
+    f.idFormation = s.idFormation
 INNER JOIN periodesstages AS p
 ON
     s.idsessionFormation = p.idSessionFormation
