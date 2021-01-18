@@ -74,9 +74,7 @@ CREATE TABLE Stagiaires(
         prenomStagiaire        Varchar (50) NOT NULL ,
         numSecuStagiaire       Varchar (15) NOT NULL ,
         numBenefStagiaire      Varchar (15) NOT NULL ,
-        dateNaissanceStagiaire Date NOT NULL,
-        emailStagiaire  Varchar (50) NOT NULL ,
-        UNIQUE KEY `email` (`emailStagiaire`)
+        dateNaissanceStagiaire Date NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
@@ -97,6 +95,8 @@ CREATE TABLE Formations(
 CREATE TABLE SessionFormation(
         idSessionFormation Int  Auto_increment  NOT NULL PRIMARY KEY,
         numOffreFormation  Varchar (50) NOT NULL ,
+        objectifPAE        Text NOT NULL ,
+        dateRapportSuivi     Date NOT NULL ,
         idFormation        Int NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
@@ -131,10 +131,10 @@ CREATE TABLE Tuteurs(
         idTuteur       Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomTuteur      Varchar (50) NOT NULL ,
         prenomTuteur   Varchar (50) NOT NULL ,
-        fonctionTuteur Varchar (100) ,
-        telTuteur      Varchar (10)  ,
-        emailTuteur     Varchar (100) NOT NULL ,
-        idEntreprise   Int 
+        fonctionTuteur Varchar (100) NOT NULL ,
+        telTuteur      Varchar (10) NOT NULL ,
+        mailTuteur     Varchar (100) NOT NULL ,
+        idEntreprise   Int NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -144,20 +144,20 @@ CREATE TABLE Tuteurs(
 CREATE TABLE Stages(
         idStage              Int  Auto_increment  NOT NULL PRIMARY KEY,
 		etape				 Int NOT NULL,
-        dateVisite           Date  ,
-        nomVisiteur          Varchar (200)  ,    
-        lieuRealisation      Varchar (200)  ,
-        deplacement          Bool  ,
-        frequenceDeplacement Varchar (200)  ,
-        modeDeplacement      Varchar (200)  ,
-        attFormReglement     Bool  ,
-        libelleAttFormReg    Varchar (200) ,
-        visiteMedical        Bool  ,
-        travauxDang          Bool  ,
-        dateDeclarationDerog Date  ,
-        sujetStage           Text  ,
-        travauxRealises      Text  ,
-        objectifPAE          Text  ,
+        dateVisite           Date NOT NULL ,
+        nomVisiteur          Varchar (200) NOT NULL ,    
+        lieuRealisation      Varchar (200) NOT NULL ,
+        deplacement          Bool NOT NULL ,
+        frequenceDeplacement Varchar (200) NOT NULL ,
+        modeDeplacement      Varchar (200) NOT NULL ,
+        attFormReglement     Bool NULL ,
+        libelleAttFormReg    Varchar (200) NOT NULL ,
+        visiteMedical        Bool NOT NULL ,
+        travauxDang          Bool NOT NULL ,
+        dateDeclarationDerog Date NOT NULL ,
+        sujetStage           Text NOT NULL ,
+        travauxRealises      Text NOT NULL ,
+        objectifPAE          Text NOT NULL ,
         dateDebut            Date NOT NULL ,
         dateFin              Date NOT NULL ,
         idTuteur  Int   NOT NULL ,
@@ -197,11 +197,11 @@ CREATE TABLE evaluations
 (
         idStage              Int    NOT NULL PRIMARY KEY,
         dateEvaluation       Date NOT NULL ,
-        objectifAcquisition  Int NOT NULL COMMENT "1:totalement 2:partiellement 3:non",
-        comportementMt       Int NOT NULL COMMENT "1:adapté 2:en progression 3:peu adapté",
-		satisfactionEnt      Int NOT NULL COMMENT "1:satisfaite 2: peu satisfaite 3:pas satisfaite",
+        objectifAcquisition  Int NOT NULL ,
+        comportementMt       Int NOT NULL ,
+		satisfactionEnt      Int NOT NULL ,
         remarqueEnt          Char(250) NOT NULL ,
-        perspectiveEmb       Int NOT NULL COMMENT "1:CDI 2:CDD 3:Alternance 4:Neant"
+        perspectiveEmb       Int NOT NULL 
 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
@@ -217,7 +217,7 @@ CREATE TABLE ValeurTravauxDangereux
     idTravauxDangereux  Int Auto_increment NOT NULL PRIMARY KEY,
     idStage   Int   NOT NULL,
     idLibelleTravauxDangereux INT NOT NULL , 
-    valeurTravaux  Int 
+    valeurTravaux  Int
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -349,23 +349,6 @@ ADD CONSTRAINT FK_ValeurAcquis_Stages
 FOREIGN KEY (idStage)
 REFERENCES Stages(idStage);
 
-ALTER TABLE `conventions`.`utilisateurs` ADD INDEX `emailU` (`emailUtilisateur`);
-ALTER TABLE `conventions`.`stagiaires` ADD INDEX `emailS` (`emailStagiaire`);
-ALTER TABLE `conventions`.`tuteurs` ADD INDEX `emailT` (`emailTuteur`);
-
-CREATE TABLE PeriodesStages(
-        idPeriode Int Auto_increment NOT NULL PRIMARY KEY ,
-        idSessionFormation Int NOT NULL ,
-        dateDebutPAE Date NOT NULL ,
-        dateFinPAE Date NOT NULL ,
-        dateRapportSuivi Date NOT NULL ,
-        objectifPAE Text 
-)ENGINE=InnoDB, CHARSET = UTF8;
-
-ALTER TABLE PeriodesStages
-ADD CONSTRAINT FK_PeriodesStages_SessionFormation
-FOREIGN KEY (idSessionFormation)
-REFERENCES SessionFormation(idSessionFormation);
 
 CREATE VIEW  stagiaireFormation as
 SELECT
