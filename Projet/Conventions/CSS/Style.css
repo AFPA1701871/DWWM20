@@ -51,13 +51,17 @@ section {
 .demi {
     flex: 0.5;
 }
-
+.mini{
+    flex:0.2;
+}
 .double {
     flex: 2;
 }
-
+.triple{
+    flex: 3;
+}
 .info {
-    margin: 1.5em;
+    margin: 0.3em;
 }
 
 /******* Form ********/
@@ -93,7 +97,7 @@ a {
 
 /********* input & Select *********/
 input,
-select {
+select ,.case {
     border: 1px solid var(--BordureBouton);
     background-color: Transparent;
     padding: 0.5em 1em;
