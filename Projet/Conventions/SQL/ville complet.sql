@@ -1,3 +1,5 @@
+USE Conventions;
+
 insert into villes (idVille,nomVille,codePostal) Values (NULL,"VILLE DU PONT","25650");
 insert into villes (idVille,nomVille,codePostal) Values (NULL,"VILLERS BUZON","25170");
 insert into villes (idVille,nomVille,codePostal) Values (NULL,"VILLERS GRELOT","25640");
