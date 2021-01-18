@@ -58,18 +58,4 @@ class ParticipationManager
 		}
 		return $liste;
 	}
-	
-	public static function getByIdStagiaire($idParticipation)
-    {
-        $db = DbConnect::getDb();
-        $id = (int) $idParticipation;
-        $liste = [];
-        $q = $db->query("SELECT * FROM participation where idParticipation=".$id);
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-            if ($donnees != false) {
-                $liste[] = new Participation($donnees);
-            }
-        }return $liste;
-
-	}
 }

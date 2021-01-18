@@ -44,7 +44,7 @@ class VillesManager
 	{
  		$db=DbConnect::getDb();
 		$liste = [];
-		$q = $db->query("SELECT * FROM Villes limit 10");
+		$q = $db->query("SELECT * FROM Villes");
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			if($donnees != false)
