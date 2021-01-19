@@ -7,8 +7,6 @@ class SessionsFormations
 
 	private $_idSessionFormation;
 	private $_numOffreFormation;
-	private $_objectifPAE;
-	private $_dateRapportSuivi;
 	private $_idFormation;
 
 	/***************** Accesseurs ***************** */
@@ -32,26 +30,6 @@ class SessionsFormations
 	public function setNumOffreFormation($numOffreFormation)
 	{
 		$this->_numOffreFormation=$numOffreFormation;
-	}
-
-	public function getObjectifPAE()
-	{
-		return $this->_objectifPAE;
-	}
-
-	public function setObjectifPAE($objectifPAE)
-	{
-		$this->_objectifPAE=$objectifPAE;
-	}
-
-	public function getDateRapportSuivi()
-	{
-		return $this->_dateRapportSuivi;
-	}
-
-	public function setDateRapportSuivi($dateRapportSuivi)
-	{
-		$this->_dateRapportSuivi=$dateRapportSuivi;
 	}
 
 	public function getIdFormation()
