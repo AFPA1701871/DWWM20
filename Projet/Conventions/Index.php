@@ -43,7 +43,7 @@ $routes=[
 	
 	/* Fiche de renseignments  */
 	"FormFRStagiaire" => ["PHP/VIEW/", "FormFRStagiaire", "Fiche de renseignments"],
-	"FormFREntreprise" => ["PHP/VIEW/", "FormEntrepriseInfos", "Fiche de renseignments"],
+	"FormFREntreprise" => ["PHP/VIEW/", "FormFREntreprise", "Fiche de renseignments"],
 	
 	/* CRUD */
 	"ListeFormations" => ["PHP/VIEW/", "ListeFormations", "Gestion des formations"],
