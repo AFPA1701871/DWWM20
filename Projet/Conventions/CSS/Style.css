@@ -98,12 +98,16 @@ a {
 
 
 /********* input & Select *********/
-input,
+input, textarea,
 select ,.case {
     border: 1px solid var(--BordureBouton);
     background-color: Transparent;
     padding: 0.5em 1em;
     color: var(--CouleurTexte);
+}
+textarea
+{
+    height: 25vh;
 }
 .titreColonne {
     border: 2px solid var(--CouleurTexte);
