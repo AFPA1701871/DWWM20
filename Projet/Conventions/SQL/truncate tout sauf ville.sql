@@ -1,3 +1,4 @@
+USE Conventions;
 
 TRUNCATE TABLE `departements`;
 TRUNCATE TABLE `Regions`;

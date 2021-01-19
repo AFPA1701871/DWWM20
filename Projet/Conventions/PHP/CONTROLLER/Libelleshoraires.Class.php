@@ -1,6 +1,6 @@
 <?php
 
-class Libelleshoraires 
+class LibellesHoraires 
 {
 
 	/*****************Attributs***************** */

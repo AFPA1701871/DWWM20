@@ -1,6 +1,6 @@
 <?php
 
-class Libellestravauxdangereux 
+class LibellesTravauxDangereux 
 {
 
 	/*****************Attributs***************** */
