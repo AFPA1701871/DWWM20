@@ -59,21 +59,7 @@ class StagiaireFormationManager
  		$db=DbConnect::getDb();
 		$db->exec("DELETE FROM StagiaireFormation WHERE idFormation=" .$obj->getIdFormation());
 	}
-	public static function findById($id)
-	{
- 		$db=DbConnect::getDb();
-		$id = (int) $id;
-		$q=$db->query("SELECT * FROM StagiaireFormation WHERE idFormation =".$id);
-		$results = $q->fetch(PDO::FETCH_ASSOC);
-		if($results != false)
-		{
-			return new StagiaireFormation($results);
-		}
-		else
-		{
-			return false;
-		}
-	}
+	
 	public static function getList()
 	{
  		$db=DbConnect::getDb();
@@ -88,4 +74,35 @@ class StagiaireFormationManager
 		}
 		return $liste;
 	}
+	public static function getListByStagiaire($idStagiaire)
+	{
+		$idStagiaire = (int) $idStagiaire;
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM StagiaireFormation where idStagiaire = ".$idStagiaire);
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new StagiaireFormation($donnees);
+			}
+		}
+		return $liste;
+	}
+	public static function getListBySession($idSession)
+	{
+		$idSession = (int) $idSession;
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM StagiaireFormation where idSessionFormation = ".$idSession);
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new StagiaireFormation($donnees);
+			}
+		}
+		return $liste;
+	}
+	
 }
