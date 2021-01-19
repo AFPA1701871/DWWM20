@@ -40,6 +40,7 @@ $routes=[
 	"FormConnexion" => ["PHP/VIEW/", "FormConnexion", "Identification",false],
 	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification",false],
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification",false],
+	"FormAdmin" => ["PHP/VIEW/", "FormAdmin", "Identification",false],
 	
 	/* Fiche de renseignments  */
 	"FormFRStagiaire" => ["PHP/VIEW/", "FormFRStagiaire", "Fiche de renseignments",false],
