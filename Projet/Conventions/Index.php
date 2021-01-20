@@ -66,6 +66,10 @@ $routes=[
 	"FormEntreprise" => ["PHP/VIEW/", "FormEntreprise", "Gestion des Entreprises",false],
 	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises",false],
 
+	"ListeStagiaires" => ["PHP/VIEW/", "ListeStagiaires", "Gestion des Stagiaires",false],
+	"FormStagiaire" => ["PHP/VIEW/", "FormStagiaire", "Gestion des Stagiaires",false],
+	"ActionStagiaire" => ["PHP/VIEW/", "ActionStagiaire", "Gestion des Stagiaires",false],
+
 	/* API */
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
 
