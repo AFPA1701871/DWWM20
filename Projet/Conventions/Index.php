@@ -56,7 +56,8 @@ $routes=[
 	"ActionFormation" => ["PHP/VIEW/", "ActionFormation", "Gestion des formations",false],
 
 	"ListeSessions" => ["PHP/VIEW/", "ListeSessions", "Gestion des sessions",false],
-	"FormSession" => ["PHP/VIEW/", "FormSession", "Gestion des sessions",false],
+	"FormSessions" => ["PHP/VIEW/", "FormSessions", "Gestion des sessions",false],
+	"FormPeriodes" => ["PHP/VIEW/", "FormPeriodes", "Gestion des périodes",false],
 	"ActionSession" => ["PHP/VIEW/", "ActionSession", "Gestion des sessions",false],
 
 	"ListeUtilisateurs" => ["PHP/VIEW/", "ListeUtilisateurs", "Gestion des Utilisateurs",false],
