@@ -21,6 +21,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 
 $routes=[
 	"default"=>["PHP/VIEW/","Accueil","Accueil",false],
+	//TEST MANAGER//
 	// "TestanimationManager"=>["PHP/MODEL/TESTMANAGER/","TestanimationManager","Test de animation"],
 	// "TestcomportementsprofessionnelsManager"=>["PHP/MODEL/TESTMANAGER/","TestcomportementsprofessionnelsManager","Test de comportementsprofessionnels"],
 	// "TestentreprisesManager"=>["PHP/MODEL/TESTMANAGER/","TestentreprisesManager","Test de entreprises"],
@@ -42,7 +43,10 @@ $routes=[
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification",false],
 	"FormAdmin" => ["PHP/VIEW/", "FormAdmin", "Identification",false],
 	
-	/* Fiche de renseignements  */
+	/**** MENU ****/
+	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Choisissez la catégorie a compléter :",false],
+
+	/**** Fiche de renseignements  ****/
 	"FormFRStagiaire" => ["PHP/VIEW/", "FormFRStagiaire", "Fiche de renseignements",false],
 	"FormFREntreprise" => ["PHP/VIEW/", "FormFREntreprise", "Fiche de renseignements",false],
 	"FormFRSujetStage" => ["PHP/VIEW/", "FormFRSujetStage", "Fiche de renseignements",false],
@@ -50,13 +54,13 @@ $routes=[
 	"FormFREvaluation" => ["PHP/VIEW/", "FormFREvaluation", "Fiche de renseignements",false],
 	"ActionFormFRStagiaire" => ["PHP/VIEW/", "ActionFormFRStagiaire", "Fiche de renseignements",false],
 	
-	/* CRUD */
+	/***** CRUD ****/
 	"ListeFormations" => ["PHP/VIEW/", "ListeFormations", "Gestion des formations",false],
 	"FormFormation" => ["PHP/VIEW/", "FormFormation", "Gestion des formations",false],
 	"ActionFormation" => ["PHP/VIEW/", "ActionFormation", "Gestion des formations",false],
 
 	"ListeSessions" => ["PHP/VIEW/", "ListeSessions", "Gestion des sessions",false],
-	"FormSessions" => ["PHP/VIEW/", "FormSessions", "Gestion des sessions",false],
+	"FormSession" => ["PHP/VIEW/", "FormSession", "Gestion des sessions",false],
 	"FormPeriodes" => ["PHP/VIEW/", "FormPeriodes", "Gestion des périodes",false],
 	"ActionSession" => ["PHP/VIEW/", "ActionSession", "Gestion des sessions",false],
 
@@ -72,7 +76,7 @@ $routes=[
 	"FormStagiaire" => ["PHP/VIEW/", "FormStagiaire", "Gestion des Stagiaires",false],
 	"ActionStagiaire" => ["PHP/VIEW/", "ActionStagiaire", "Gestion des Stagiaires",false],
 
-	/* API */
+	/**** API ****/
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
 
 

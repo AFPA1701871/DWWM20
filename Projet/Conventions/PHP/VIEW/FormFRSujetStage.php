@@ -18,10 +18,6 @@
                 <button class="bouton" type="submit"><i class="far fa-check-circle"></i> Valider</button>
             </div>
             <div></div>
-            <div class="info colonne">
-                <button class="bouton" type="submit"><i class="far fa-arrow-alt-circle-left"></i> Retour</button>
-            </div>
-            <div></div>
         </div>
 
         <div>
