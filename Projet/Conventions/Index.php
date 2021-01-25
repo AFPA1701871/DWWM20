@@ -20,28 +20,14 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","Accueil","Accueil",false],
-	//TEST MANAGER//
-	// "TestanimationManager"=>["PHP/MODEL/TESTMANAGER/","TestanimationManager","Test de animation"],
-	// "TestcomportementsprofessionnelsManager"=>["PHP/MODEL/TESTMANAGER/","TestcomportementsprofessionnelsManager","Test de comportementsprofessionnels"],
-	// "TestentreprisesManager"=>["PHP/MODEL/TESTMANAGER/","TestentreprisesManager","Test de entreprises"],
-	// "TestevaluationsManager"=>["PHP/MODEL/TESTMANAGER/","TestevaluationsManager","Test de evaluations"],
-	// "TestformationsManager"=>["PHP/MODEL/TESTMANAGER/","TestformationsManager","Test de formations"],
-	// "TesthorairesManager"=>["PHP/MODEL/TESTMANAGER/","TesthorairesManager","Test de horaires"],
-	// "TestparticipationManager"=>["PHP/MODEL/TESTMANAGER/","TestparticipationManager","Test de participation"],
-	// "TestrolesManager"=>["PHP/MODEL/TESTMANAGER/","TestrolesManager","Test de roles"],
-	// "TestsessionformationManager"=>["PHP/MODEL/TESTMANAGER/","TestsessionformationManager","Test de sessionformation"],
-	// "TeststagesManager"=>["PHP/MODEL/TESTMANAGER/","TeststagesManager","Test de stages"],
-	// "TeststagiairesManager"=>["PHP/MODEL/TESTMANAGER/","TeststagiairesManager","Test de stagiaires"],
-	// "TesttravauxdangereuxManager"=>["PHP/MODEL/TESTMANAGER/","TesttravauxdangereuxManager","Test de travauxdangereux"],
-	// "TesttuteursManager"=>["PHP/MODEL/TESTMANAGER/","TesttuteursManager","Test de tuteurs"],
-	// "TestutilisateursManager"=>["PHP/MODEL/TESTMANAGER/","TestutilisateursManager","Test de utilisateurs"],
-	// "TestvillesManager"=>["PHP/MODEL/TESTMANAGER/","TestvillesManager","Test de villes"],
-		
+	/**** DEFAULT *****/
+	"default" => ["PHP/VIEW/", "FormConnexion", "Choisissez la catégorie a compléter :",false],
+	
 	"FormConnexion" => ["PHP/VIEW/", "FormConnexion", "Identification",false],
 	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification",false],
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification",false],
 	"FormAdmin" => ["PHP/VIEW/", "FormAdmin", "Identification",false],
+	"InterfaceFormateur" => ["PHP/VIEW/", "InterfaceFormateur", "Gestion des stages",false],
 	
 	/**** MENU ****/
 	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Choisissez la catégorie a compléter :",false],
@@ -78,7 +64,11 @@ $routes=[
 
 	/**** API ****/
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
-
+	"SessionAPI"=>["PHP/MODEL/API/","SessionAPI","Accueil",true],
+	"ListeStagiairesAPI"=>["PHP/MODEL/API/","ListeStagiairesAPI","Accueil",true],
+	"GetObjectifAPI"=>["PHP/MODEL/API/","GetObjectifAPI","Accueil",true],
+	"SetObjectifAPI"=>["PHP/MODEL/API/","SetObjectifAPI","Accueil",true],
+	
 
 ];
 
