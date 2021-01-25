@@ -64,6 +64,7 @@ $routes=[
 
 	/**** API ****/
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
+	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
 	"SessionAPI"=>["PHP/MODEL/API/","SessionAPI","Accueil",true],
 	"ListeStagiairesAPI"=>["PHP/MODEL/API/","ListeStagiairesAPI","Accueil",true],
 	"GetObjectifAPI"=>["PHP/MODEL/API/","GetObjectifAPI","Accueil",true],

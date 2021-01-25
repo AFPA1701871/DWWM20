@@ -10,7 +10,7 @@ if (isset($page))
     {
         case "FormFRStagiaire" : echo '<script src="./JS/VerifFormFRStagiaire.js"></script>';break;
         case "FormStagiaire" : echo '<script src="./JS/VerifFormStagiaire.js"></script>';break;
-        case "FormFREntreprise" : echo '<script src="./JS/VerifFormEntreprise.js"></script>';break;
+        case "FormFREntreprise" : echo '<script src="./JS/VerifFormFREntreprise.js"></script>';break;
         case "ListeUtilisateurs" : echo '<script src="./JS/FiltreUtilisateurs.js"></script>';break;
         case "FormSession" : echo '<script src="./JS/VerifFormSession.js"></script>';break;
         case "FormPeriode" : echo '<script src="./JS/VerifFormPeriode.js"></script>';break;
