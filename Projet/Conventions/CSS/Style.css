@@ -74,8 +74,11 @@ label {
 
 .centerItem {
     align-items: center;
+}
+.centerSelf {
     align-self: center;
 }
+
 
 a {
     color: var(--CouleurTexte);
@@ -101,7 +104,18 @@ a {
 button:disabled{
     border: solid var(--CouleurOmbre) 2px;
 }
+.grandBouton{
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    font-weight: 900;
+    padding: 0.5em 4em;
+    background : linear-gradient(to right,var(--BordureBouton),var(--FondPage),90%, var(--BordureBouton));
 
+}
+.zoneBouton{
+    padding: 2em 0;
+}
 /********* input & Select *********/
 input, textarea,
 select ,.case {
@@ -220,7 +234,7 @@ footer {
    
 }
 
-.menu > div{
+.menu > div {
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border: 2px solid var(--CouleurOmbre);

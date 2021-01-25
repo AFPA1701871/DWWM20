@@ -132,4 +132,19 @@ class StagiaireFormationManager
         return count($liste);
     }
     
+    public static function getPeriodeBySession($idSessionFormation)
+    {
+        $db = DbConnect::getDb();
+        $liste = [];
+        $idSessionFormation = (int) $idSessionFormation;
+        $q = $db->query("SELECT DISTINCT idPeriode FROM StagiaireFormation WHERE idSessionFormation = ".$idSessionFormation." ORDER BY dateDebutPAE" );
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = PeriodesStagesManager::findById($donnees['idPeriode']);
+            }
+        }
+        return $liste;
+    }
 }

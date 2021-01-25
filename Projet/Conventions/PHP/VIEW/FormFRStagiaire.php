@@ -1,8 +1,4 @@
 <?php
-
-$utilisateur = new Utilisateurs(["idUtilisateur" => 2, "nomUtilisateur" => "COURQUIN", "prenomUtilisateur" => "Pierre", "emailUtilisateur" => "toto6@test.fr", "mdpUtilisateur" => "user", "datePeremption" => "", "idRole" => 4]);
-
-$_SESSION['utilisateur'] = $utilisateur;
 if ($_SESSION['utilisateur']->getIdRole() == 4)
 {
     $email = $_SESSION['utilisateur']->getEmailUtilisateur();

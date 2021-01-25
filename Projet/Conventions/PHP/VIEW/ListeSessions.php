@@ -1,19 +1,26 @@
 <?php
 
 echo '<section class = "colonne">
-        <div class = "case centre noborder">
-            <h2>Liste des sessions</h2>
+<div class="zoneBouton">
+        <div class="grande">
+            <div>
+                <a href="index.php?page=FormSession&mode=ajout">
+                    <button class="bouton"><i class="fas fa-plus-circle"></i> Ajouter</button>
+                </a>
+            </div>
+
+            <div><a href="index.php?page=FormAdmin"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i>
+                        Retour</button></a></div>
         </div>
-        <div>
-            <a href="Index.php?page=FormSession&mode=ajout">
-                <button class="bouton info"><i class="fas fa-plus-circle"></i> Ajouter</button>
-            </a>
-        </div>
-        <div></div>
+        <div class="triple"></div>
+    </div>
+        
+       
         <div class="info">
             <div class=" case double titreColonne">Libelle formation</div>
             <div class="case titreColonne">numéro d\'offre</div>
-            <div class="double"></div></div>';
+            <div class="double">
+            </div></div>';
 $tableau = SessionsFormationsManager::getList();
 foreach ($tableau as $uneSession) {
     $formation = FormationsManager::findById($uneSession->getIdFormation());
