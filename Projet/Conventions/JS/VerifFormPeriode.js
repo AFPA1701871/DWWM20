@@ -1,4 +1,5 @@
-function verifDateDebut(e) { // cette fonction verifie que la date de fin n est pas superieure a la date de debut
+
+function verifDateDebut(e) {// cette fonction verifie que la date de fin n est pas superieure a la date de debut
     let dateFin = e.target;
     let dateDebut = dateFin.parentNode.parentNode.getElementsByClassName('dateDebutPAE')[0];
     let message = (dateFin.parentNode).getElementsByClassName("cache")[0];
@@ -6,7 +7,9 @@ function verifDateDebut(e) { // cette fonction verifie que la date de fin n est 
         message.innerHTML = "date incorrecte";
         message.style.display = 'block';
         dateFin.style.border = "2px solid red";
-    } else {
+    }
+    else
+    {
         message.innerHTML = "";
         dateFin.style.border = "2px solid green";
         message.style.display = 'block';
@@ -22,35 +25,36 @@ function verifDateRapport(e) {
         message.innerHTML = "date incorrecte";
         message.style.display = 'block';
         e.target.style.border = "2px solid red";
-    } else {
+    }
+    else
+    {
         message.innerHTML = "";
         e.target.style.border = "2px solid green";
         message.style.display = 'block';
     }
 }
 
-function ajoutDateRapport(e) {
-    let dateDebutInput = e.target;
+function ajoutDateRapport(e)
+{
+    let dateFinInput = e.target;
     let dateRapportInput = e.target.parentNode.parentNode.parentNode.children[1].children[1];
-    let dateDebut = new Date(dateDebutInput.value);
+    let dateFin = new Date(dateFinInput.value);
 
-    let toto = new Date(dateDebut);
-    toto.setDate(toto.getDate() - 15);
+    let dateRapport = new Date(dateFin);
+    dateRapport.setDate(dateRapport.getDate()-15);
 
-    dateRapportInput.value = toto.toLocaleDateString('en-CA');
-}
+    dateRapportInput.value = dateRapport.toLocaleDateString('en-CA');
+}                                                                                          
+                                                                                                                               
+var ajoutP = document.querySelector('#ajout1p');                                                  
 
+ajoutP.addEventListener('click', function(){
+var form = document.querySelector('form');
 
-
-var ajoutP = document.querySelector('#ajout1p');
-
-ajoutP.addEventListener('click', function () {
-    var form = document.querySelector('form');
-
-    form.action += '&perSup=ok'
+form.action +='&perSup=ok'
 });
 
-var listeDateFin = document.getElementsByName('dateFinPAE');
+var listeDateFin = document.getElementsByClassName('dateFinPAE');
 
 for (let i = 0; i < listeDateFin.length; i++) {
     listeDateFin[i].addEventListener('input', verifDateDebut);

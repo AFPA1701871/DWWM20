@@ -1,5 +1,12 @@
 <?php
 
+/** Pour Antoine
+ *
+ * J'ai enlevé la class centre sur le form
+ * J'ai ajouté une div autour des input / select
+ * J'ai ajouté la class info sur les div qui regroupe les label et leur input
+ * J'ai ajouté la class titreColonne sur la div autour des informations de stage
+ */
 $mode = $_GET['mode'];
 if (isset($_GET['id'])) // si l'id est renseigné
 {
@@ -55,7 +62,8 @@ switch ($mode) {
              <label for="idFormation">formation: </label>
         <?php $formations = FormationsManager::getList();
 if ($mode === "ajout") {
-    echo '<div class="relatif" ><select id="select" name="idFormation" pattern="\d" >
+    echo '<div class="relatif" >
+    <select id="select" class="relatif" name="idFormation" pattern="\d" >
             <option selected="selected" value="defaut" >----Choisissez une Formation----</option>';
     foreach ($formations as $uneFormation) {
         echo '<option value="' . $uneFormation->getIdFormation() . '">' . $uneFormation->getLibelleFormation() . '</option>';
@@ -120,14 +128,14 @@ switch ($mode) {
     case "ajout":
         {
             echo '<div class="mini">
-            </div><button id="valide" class="bouton" type="submit"><i class="fas fa-plus-circle"></i> Valider</button>
+            </div><button id="valide" class="bouton" type="submit" disabled ><i class="fas fa-plus-circle"></i> Valider</button>
             </form>';
             break;
         }
     case "modif":
         {
             echo '<div class="mini"></div>
-            <button class="bouton" type="submit"><i class="fas fa-edit"></i> Valider</button>
+            <button id="valide" class="bouton" type="submit"><i class="fas fa-edit"></i> Valider</button>
             </form>
             <button id="ajout1p" class="bouton" type="submit"><i class="fas fa-edit"></i> Ajout Periode</button>';
 
