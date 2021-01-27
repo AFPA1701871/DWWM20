@@ -1,12 +1,5 @@
 <?php
 
-/** Pour Antoine
- *
- * J'ai enlevé la class centre sur le form
- * J'ai ajouté une div autour des input / select
- * J'ai ajouté la class info sur les div qui regroupe les label et leur input
- * J'ai ajouté la class titreColonne sur la div autour des informations de stage
- */
 $mode = $_GET['mode'];
 if (isset($_GET['id'])) // si l'id est renseigné
 {
@@ -15,7 +8,6 @@ if (isset($_GET['id'])) // si l'id est renseigné
         $idChoisi = SessionsFormationsManager::findById($idRecu);
         $idForma = FormationsManager::findById($idChoisi->getIdFormation());
         $listePae = PeriodesStagesManager::getListBySession($idChoisi->getIdSessionFormation());
-
     }
 }
 ?>
@@ -23,58 +15,51 @@ if (isset($_GET['id'])) // si l'id est renseigné
 <?php
 switch ($mode) {
     case "ajout":{
-            echo '<div class = "case centre noborder">
-                    <h2>Ajouter une Session</h2>
-                </div>
-            <form   action="index.php?page=ActionSession&mode=ajoutSes" method="POST">';
+            echo '<form   action="index.php?page=ActionSession&mode=ajoutSes" method="POST">';
             break;
         }
     case "modif":{
-            echo '<div class = "case centre noborder">
-                    <h2>Modifier une Session</h2>
-                </div>
-            <form  action="index.php?page=ActionSession&mode=modif&id=' . $idChoisi->getIdSessionFormation() . '" method="POST">
-    <input name="idSessionFormation"  value="' . $idChoisi->getIdSessionFormation() . '" type="hidden" />';
+            echo '<form  action="index.php?page=ActionSession&mode=modif&id=' . $idChoisi->getIdSessionFormation() . '" method="POST">
+                    <input name="idSessionFormation"  value="' . $idChoisi->getIdSessionFormation() . '" type="hidden" />';
             break;
         }
     case "detail":{
-            echo '<div class = "case centre noborder">
-                    <h2>Détail d\'une Session</h2>
-                </div>
+            echo '
             <form >
-<input name="idSessionFormation"  value="' . $idChoisi->getIdSessionFormation() . '" type="hidden" />';
+                <input name="idSessionFormation"  value="' . $idChoisi->getIdSessionFormation() . '" type="hidden" />';
             break;
         }
 }
 
 ?>
-            <div class = "relatif colonne info">
-                <label for="numOffreFormation">Numéro d'offre: </label>
-            <div class="relatif">
-                <input id="numOffreFormation" name="numOffreFormation" <?php if ($mode != "ajout") {
-    echo 'value="' . $idChoisi->getNumOffreFormation() . '"';}if ($mode == "delete" || $mode == "detail") {
-    echo 'disabled';
-}
-?> pattern="\d{6}"/><div class="cache erreur"></div>
-</div>
+            <div class="centre info">
+                <div><label for="numOffreFormation">Numéro d'offre: </label></div>
+               <div class="grande"> <input id="numOffreFormation" name="numOffreFormation" <?php if ($mode != "ajout") { echo 'value="' . $idChoisi->getNumOffreFormation() . '"';}if ($mode == "delete" || $mode == "detail") { echo 'disabled'; } ?> pattern="\d{6}"/></div>
+                <div class=" erreur"></div>
             </div>
-<div class = "colonne info">
-             <label for="idFormation">formation: </label>
-        <?php $formations = FormationsManager::getList();
+            
+            <div class = "centre info">
+                <div><label for="idFormation">Formation: </label></div>
+<?php 
+$formations = FormationsManager::getList();
 if ($mode === "ajout") {
-    echo '<div class="relatif" >
-    <select id="select" class="relatif" name="idFormation" pattern="\d" >
-            <option selected="selected" value="defaut" >----Choisissez une Formation----</option>';
-    foreach ($formations as $uneFormation) {
-        echo '<option value="' . $uneFormation->getIdFormation() . '">' . $uneFormation->getLibelleFormation() . '</option>';
+    echo '      <div class="grande">
+                    <select id="select" class="relatif" name="idFormation" pattern="\d" >
+                        <option selected="selected" value="defaut" >----Choisissez une Formation----</option>';
+    foreach ($formations as $uneFormation) 
+    {
+        echo '          <option value="' . $uneFormation->getIdFormation() . '">' . $uneFormation->getLibelleFormation() . '</option>';
     }
-    echo '</select><div class="cache erreur"></div></div>';
+    echo '          </select>
+                </div>
+                <div class=" erreur"></div>
+            </div>';
 } else {
     if ($mode == "delete" || $mode == "detail") {
-        echo '<div class="case">' . $idForma->getLibelleFormation() . '</div>';
-        $disabled = "disabled";
+        echo '<div class="titre grande ">' . $idForma->getLibelleFormation() . '</div><div></div> </div>';
+        $disabled = " disabled ";
     } else {/** mode modif */
-        echo '<select id="select" class="relatif" name="idFormation">';
+        echo '<div class="grande"><select id="select" class="relatif" name="idFormation">';
         foreach ($formations as $uneFormation) {
             $sel = "";
             if ($uneFormation->getIdFormation() == $idForma->getIdFormation()) {
@@ -82,71 +67,89 @@ if ($mode === "ajout") {
             }
             echo '<option value="' . $uneFormation->getIdFormation() . '"  ' . $sel . '>' . $uneFormation->getLibelleFormation() . '</option>';
         }
-        echo '</select><div class="cache erreur"></div>';
+        echo '</select></div>
+        <div class=" erreur"></div>
+        </div>';
         $disabled = " ";
 
     }
     $nbPae = count($listePae);
-    echo '<input type="hidden" name="nbPae" value="' . $nbPae . '"/>';
+    echo '<input type="hidden" name="nbPae" value="' . $nbPae . '"/>
+            <div class="espaceHor"></div>  ';
     for ($i = 0; $i < $nbPae; $i++) {
         echo '<div class="colonne info titreColonne" >
-                <div>
-                <input type="hidden" name="idPeriode' . $i . '" value="' . $listePae[$i]->getIdPeriode() . '"/>
-                <input type="hidden" name="idSessionFormation" value="' . $listePae[$i]->getIdSessionFormation() . '"/>
-                <div class="relatif colonne" >
-                <label for="dateDebutPAE">Date de début de stage: </label>
-                <input class="dateDebutPAE" type="date" name="dateDebutPAE' . $i . '" value="' . $listePae[$i]->getDateDebutPAE() . '" ' . $disabled . ' />
-                <div class="cache erreur"></div>
+                <div class="info">
+                    <div class="mini"></div>
+                    <input type="hidden" name="idPeriode' . $i . '" value="' . $listePae[$i]->getIdPeriode() . '"/>
+                    <input type="hidden" name="idSessionFormation" value="' . $listePae[$i]->getIdSessionFormation() . '"/>
+                    <div class=" colonne" >
+                        <label for="dateDebutPAE">Date de début de stage: </label>
+                        <input class="dateDebutPAE" type="date" name="dateDebutPAE' . $i . '" value="' . $listePae[$i]->getDateDebutPAE() . '" ' . $disabled . ' />
+                        <div class=" erreur"></div>
+                    </div>
+                    <div class="mini"></div>
+                    <div class=" colonne" >
+                        <label for="dateFinPAE">Date de fin de stage: </label>
+                        <input class="dateFinPAE" type="date" name="dateFinPAE' . $i . '" value="' . $listePae[$i]->getDateFinPAE() . '" ' . $disabled . ' />
+                        <div class=" erreur"></div>
+                    </div>
+                    <div class="mini"></div>
                 </div>
-                <div class="relatif colonne" >
-                <label for="dateFinPAE">Date de fin de stage: </label>
-                <input class="dateFinPAE" type="date" name="dateFinPAE' . $i . '" value="' . $listePae[$i]->getDateFinPAE() . '" ' . $disabled . ' />
-                <div class="cache erreur"></div>
+                <div class="info" >
+                    <div class="mini"></div>
+                    <div class="colonne">
+                        <label for="dateRapportSuivi">Date Rapport de suivi: </label>
+                        <div class="mini"></div>
+                        <input class="dateRapportSuivi" type="date" name="dateRapportSuivi' . $i . '" value="' . $listePae[$i]->getDateRapportSuivi() . '" ' . $disabled . ' />
+                        <div class=" erreur"></div>
+                    </div>
+                    <div class="mini"></div>
+                    <div></div>
                 </div>
+                <div class="info colonne" >
+                    <div><label for="objectifPAE">Objectif de stage: </label></div>
+                    <div class="">  
+                        <div class="mini"></div>
+                        <input type="textarea" class="grande" name="objectifPAE' . $i . '" value="' . $listePae[$i]->getObjectifPAE() . '" ' . $disabled . ' />
+                        <div class="mini"></div>  
+                    </div> 
+                    <div class=" erreur"></div>
                 </div>
-                <div class="relatif colonne" >
-                <label for="dateRapportSuivi">Date Rapport de suivi: </label>
-                <input class="dateRapportSuivi" type="date" name="dateRapportSuivi' . $i . '" value="' . $listePae[$i]->getDateRapportSuivi() . '" ' . $disabled . ' />
-                <div class="cache erreur"></div>
-                </div>
-                <div class="relatif colonne" >
-                <label for="objectifPAE">Objectif de stage: </label>
-                <input type="textarea" name="objectifPAE' . $i . '" value="' . $listePae[$i]->getObjectifPAE() . '" ' . $disabled . ' />
-                <div class="cache erreur"></div>
-                </div>
-                </div>';
+            </div>';
     }
 
 }
 
-?>
+echo '<div class="espaceHor"></div>';
 
-</div>
-<div>
-<?php
 switch ($mode) {
     case "ajout":
         {
-            echo '<div class="mini">
-            </div><button id="valide" class="bouton" type="submit" disabled ><i class="fas fa-plus-circle"></i> Valider</button>
-            </form>';
+            echo '<div class="info"><div class="mini">
+            </div><button id="valide" class="bouton" type="submit" disabled ><i class="fas fa-plus-circle"></i> Ajouter</button>
+          ';
             break;
         }
     case "modif":
         {
-            echo '<div class="mini"></div>
-            <button id="valide" class="bouton" type="submit"><i class="fas fa-edit"></i> Valider</button>
-            </form>
-            <button id="ajout1p" class="bouton" type="submit"><i class="fas fa-edit"></i> Ajout Periode</button>';
+            echo '<div class="info">
+                    <div class="mini"></div>
+                    <button id="valide" class="bouton" type="submit"><i class="fas fa-edit"></i> Modifier</button>
+                    <div class="mini">
+                    <button id="ajout1p" class="bouton" type="submit"><i class="fas fa-edit"></i> Ajout Periode</button>
+                </div>';
 
             break;
         }
+        case"detail":
+            echo '<div class="info">';
+            break;
 }
 
-echo '<div class="mini"></div>';
 ?>
-</div>
+
 <div class="mini"></div>
-<div class="info"><a href="Index.php?page=ListeSessions"><button class="bouton">Retour</button></a></div>
-<div class="mini"></div>
+<a href="Index.php?page=ListeSessions"><button class="bouton">Retour</button></a>
+<div class="mini"></div></div>
+      </form>
 </section>

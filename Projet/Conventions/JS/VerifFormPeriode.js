@@ -2,7 +2,7 @@
 function verifDateDebut(e) {// cette fonction verifie que la date de fin n est pas superieure a la date de debut
     let dateFin = e.target;
     let dateDebut = dateFin.parentNode.parentNode.getElementsByClassName('dateDebutPAE')[0];
-    let message = (dateFin.parentNode).getElementsByClassName("cache")[0];
+    let message = (dateFin.parentNode).getElementsByClassName("erreur")[0];
     if (dateFin.value < dateDebut.value) {
         message.innerHTML = "date incorrecte";
         message.style.display = 'block';
@@ -20,7 +20,7 @@ function verifDateRapport(e) {
     let dateRapport = e.target.value;
     console.log(e.target)
     let dateFin = e.target.parentNode.parentNode.children[0].children[2].children[1].value;
-    let message = (e.target.parentNode).getElementsByClassName("cache")[0];
+    let message = (e.target.parentNode).getElementsByClassName("erreur")[0];
     if (dateFin < dateRapport) {
         message.innerHTML = "date incorrecte";
         message.style.display = 'block';

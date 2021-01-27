@@ -193,7 +193,6 @@ header {
 }
 
 .titre {
-    flex: 2;
     color: var(--CouleurTexte);
 }
 
