@@ -172,6 +172,9 @@ select option::selection {
 .incorrect{
     border: red solid 3px;
 }
+.correct{
+    border: #3db651 solid 3px;
+}
 
 
 /******** Header ********/
@@ -207,6 +210,7 @@ footer {
 }
 .container{
     padding-bottom: 3.5em;
+    flex-direction: column;
 }
 
 .aideMdp {

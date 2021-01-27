@@ -71,4 +71,18 @@ class ParticipationsManager
         }return $liste;
 
 	}
+	public static function getBySessionStagiaire($idSession, $idStagiaire)
+	{
+ 		$db=DbConnect::getDb();
+		$q=$db->query("SELECT * FROM Participations WHERE idSessionFormation =".$idSession ." And idStagiaire=".$idStagiaire);
+		$results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Participations($results);
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

@@ -100,7 +100,10 @@ CREATE TABLE Formations(
 CREATE TABLE SessionsFormations(
         idSessionFormation Int  Auto_increment  NOT NULL PRIMARY KEY,
         numOffreFormation  Int NOT NULL ,
-        idFormation        Int NOT NULL
+        idFormation        Int NOT NULL, 
+        dateDebut DATE NOT NULL, 
+        dateFin DATE NOT NULL
+   
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------

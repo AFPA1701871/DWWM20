@@ -113,37 +113,45 @@ INSERT INTO `stagiaires` (`idStagiaire`,`genreStagiaire`,`nomStagiaire`,`prenomS
 INSERT INTO `stagiaires` (`idStagiaire`,`genreStagiaire`,`nomStagiaire`,`prenomStagiaire`,`numSecuStagiaire`,`numBenefStagiaire`,`dateNaissanceStagiaire`,`emailStagiaire`) VALUES (28,"F","Marquez","Ira","714416769911156","357971867324688","2021-05-05","tot28o@test.fr");
 UPDATE `stagiaires` SET `emailStagiaire`= CONCAT( `nomStagiaire` , "." , `prenomStagiaire`, "@gmail.com");
 
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (1,"0048196996550",5);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (2,"2566858494579",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (3,"4629508445858",7);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (4,"6425382242961",2);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (5,"3207130638156",6);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (6,"8402414753117",9);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (7,"1306014302529",8);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (8,"7799551572292",3);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (9,"0965264250815",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (10,"9166444023295",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (11,"6477836051307",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (12,"2247163510075",8);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (13,"1134883228241",8);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (14,"6829556746887",5);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (15,"5655969257143",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (16,"6353900415990",5);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (17,"2814164537344",6);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (18,"5826459903578",4);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (19,"8862082190314",9);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (20,"7082429191074",6);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (21,"9569958541786",3);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (22,"2417177685592",9);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (23,"1543393588906",5);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (24,"7666511056629",1);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (25,"4296814252157",4);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (26,"6611983230353",9);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (27,"1820264622013",5);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (28,"2784852545671",2);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (29,"4958967041890",8);
-INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`) VALUES (30,"0692947198619",3);
-
+INSERT INTO `sessionsformations` (`idSessionFormation`, `numOffreFormation`, `idFormation`, `dateDebut`, `dateFin`) VALUES
+(1, '0048196996550', 5, '2021-01-27', '2021-01-27'),
+(2, '2566858494579', 1, '2021-01-27', '2021-01-27'),
+(3, '4629508445858', 8, '2021-01-27', '2021-01-27'),
+(4, '6425382242961', 2, '2021-01-27', '2021-01-27'),
+(5, '3207130638156', 6, '2021-01-27', '2021-01-27'),
+(6, '8402414753117', 9, '2021-01-27', '2021-01-27'),
+(7, '1306014302529', 8, '2021-01-27', '2021-01-27'),
+(8, '7799551572292', 3, '2021-01-27', '2021-01-27'),
+(9, '0965264250815', 1, '2021-01-27', '2021-01-27'),
+(10, '9166444023295', 1, '2021-01-27', '2021-01-27'),
+(11, '6477836051307', 1, '2021-01-27', '2021-01-27'),
+(12, '2247163510075', 8, '2021-01-27', '2021-01-27'),
+(13, '1134883228241', 8, '2021-01-27', '2021-01-27'),
+(14, '6829556746887', 5, '2021-01-27', '2021-01-27'),
+(15, '5655969257143', 1, '2021-01-27', '2021-01-27'),
+(16, '6353900415990', 5, '2021-01-27', '2021-01-27'),
+(17, '2814164537344', 6, '2021-01-27', '2021-01-27'),
+(18, '5826459903578', 4, '2021-01-27', '2021-01-27'),
+(19, '8862082190314', 9, '2021-01-27', '2021-01-27'),
+(20, '7082429191074', 6, '2021-01-27', '2021-01-27'),
+(21, '9569958541786', 3, '2021-01-27', '2021-01-27'),
+(22, '2417177685592', 9, '2021-01-27', '2021-01-27'),
+(23, '1543393588906', 5, '2021-01-27', '2021-01-27'),
+(24, '7666511056629', 1, '2021-01-27', '2021-01-27'),
+(25, '4296814252157', 4, '2021-01-27', '2021-01-27'),
+(26, '6611983230353', 9, '2021-01-27', '2021-01-27'),
+(27, '1820264622013', 5, '2021-01-27', '2021-01-27'),
+(28, '2784852545671', 2, '2021-01-27', '2021-01-27'),
+(29, '4958967041890', 8, '2021-01-27', '2021-01-27'),
+(30, '0692947198619', 3, '2021-01-27', '2021-01-27'),
+(34, '122112', 1, '2021-01-27', '2021-01-27'),
+(35, '111', 1, '2021-01-27', '2021-01-27'),
+(36, '111', 1, '2021-01-27', '2021-01-27'),
+(37, '111', 3, '2021-01-27', '2021-01-27'),
+(38, '1112', 3, '2021-01-27', '2021-01-27'),
+(39, '111122', 1, '2021-01-27', '2021-01-27'),
+(40, '1', 1, '2021-01-27', '2021-01-27'),
+(41, '2', 1, '2021-01-27', '2021-01-27');
 
 INSERT INTO `participations` (`idParticipation`,`dateDebut`,`dateFin`,`idSessionFormation`,`idStagiaire`) VALUES (1,"2021-09-04 00:26:41","2020-12-09 23:34:59",5,23);
 INSERT INTO `participations` (`idParticipation`,`dateDebut`,`dateFin`,`idSessionFormation`,`idStagiaire`) VALUES (2,"2020-08-10 06:04:45","2020-11-21 00:50:45",6,20);
