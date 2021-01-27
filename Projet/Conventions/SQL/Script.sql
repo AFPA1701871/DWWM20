@@ -73,10 +73,10 @@ CREATE TABLE Roles(
 
 CREATE TABLE Stagiaires(
         idStagiaire            Int  Auto_increment  NOT NULL PRIMARY KEY,
-        genreStagiaire         Varchar (1) NOT NULL ,
+        genreStagiaire         Varchar (1)  ,
         nomStagiaire           Varchar (50) NOT NULL ,
         prenomStagiaire        Varchar (50) NOT NULL ,
-        numSecuStagiaire       Varchar (15) NOT NULL ,
+        numSecuStagiaire       Varchar (15)  ,
         numBenefStagiaire      Varchar (15) NOT NULL ,
         dateNaissanceStagiaire Date NOT NULL,
         emailStagiaire Varchar (50) NOT NULL 
