@@ -48,8 +48,8 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
 
 if(!empty($sheetData))
 {
-    //for($i=5; $i<count($sheetData); $i++)
-    for($i=5; $i<6; $i++)
+    for($i=5; $i<count($sheetData); $i++)
+    //for($i=5; $i<6; $i++)
     {
     
          // $tempGenreStagiaire = $elt[1];
