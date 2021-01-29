@@ -1,7 +1,7 @@
 <section class="double">
     <div class="colonne ">
           <a href="index.php?page=ListeFormations" class="info ">
-            <button class="bouton grandBouton">Gestion des formation</button>
+            <button class="bouton grandBouton">Gestion des formations</button>
         </a>
         <div class="espaceHor"></div>
         <a href="index.php?page=ListeSessions" class="info ">

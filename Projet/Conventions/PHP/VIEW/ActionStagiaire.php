@@ -71,7 +71,7 @@ function creerUtilisateur($stagiaire, $sess)
     $utilisateur->setNomUtilisateur($stagiaire->getNomStagiaire());
     $utilisateur->setPrenomUtilisateur($stagiaire->getPrenomStagiaire());
     $utilisateur->setEmailUtilisateur($stagiaire->getEmailStagiaire());
-    $utilisateur->setIdRole(3);
+    $utilisateur->setIdRole(4);
     $utilisateur->setMdpUtilisateur($stagiaire->getPrenomStagiaire() . $stagiaire->getNomStagiaire() . $stagiaire->getNumBenefStagiaire());
     $date = date_create_from_format("Y-m-d", $sess->getDateFin());
     $newdate = date_add($date, date_interval_create_from_date_string("15 days"));
