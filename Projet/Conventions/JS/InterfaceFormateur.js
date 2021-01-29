@@ -117,7 +117,7 @@ function ajoutSession(reponse)
     {
         let defaut=document.createElement("option");
         defaut.setAttribute("value","default");
-        defaut.innerHTML="Acune Session à afficher";
+        defaut.innerHTML="Acune Offre à afficher";
         selectSession.appendChild(defaut);
     }
     else{
@@ -125,7 +125,7 @@ function ajoutSession(reponse)
         {
             let defaut=document.createElement("option");
             defaut.setAttribute("value","default");
-            defaut.innerHTML="Selectionnez une session";
+            defaut.innerHTML="Selectionnez une offre";
             selectSession.appendChild(defaut);
         }
         for (let i = 0; i < reponse.length; i++) { 

@@ -189,7 +189,7 @@ foreach ($formations as $elt)
 echo '</select><div></div></div>';
 
 echo '<div class="info">
-        <label class="double">Session</label>
+        <label class="double">N° Offre</label>
         <input type="hidden" name = "idAncienneSession" value ="' . $idSession . '">
         <select class="double" id="selectSession" name="idSessionFormation" >';
 $liste = SessionsFormationsManager::getByFormation($idFormation, false);

@@ -43,9 +43,24 @@ function validerForm() {
 
 }
 
-function verifDateDebut(e) { // cette fonction verifie que la date de fin n est pas superieure a la date de debut
+function verifDateFinPAE(e) { // cette fonction verifie que la date de fin n est pas superieure a la date de debut
     let dateFin = e.target;
     let dateDebut = dateFin.parentNode.parentNode.getElementsByClassName('dateDebutPAE')[0];
+    let message = (dateFin.parentNode).getElementsByClassName("erreur")[0];
+    message.style.display = 'block';
+
+    if (dateFin.value < dateDebut.value) {
+        message.innerHTML = "date incorrecte";
+        dateFin.style.border = "2px solid red";
+    } else {
+        message.innerHTML = "";
+        dateFin.style.border = "2px solid green";
+        message.style.display = 'block';
+    }
+}
+function verifDateFin(e) { // cette fonction verifie que la date de fin n est pas superieure a la date de debut
+    let dateFin = e.target;
+    let dateDebut = document.getElementsByName('dateDebut')[0];
     let message = (dateFin.parentNode).getElementsByClassName("erreur")[0];
     message.style.display = 'block';
 
@@ -101,7 +116,7 @@ if (url.indexOf("modif") != -1) {
 var listeDateFin = document.getElementsByClassName('dateFinPAE');
 
 for (let i = 0; i < listeDateFin.length; i++) {
-    listeDateFin[i].addEventListener('input', verifDateDebut);
+    listeDateFin[i].addEventListener('input', verifDateFinPAE);
 }
 
 var listeDateRapport = document.getElementsByClassName('dateRapportSuivi');
@@ -109,3 +124,5 @@ var listeDateRapport = document.getElementsByClassName('dateRapportSuivi');
 for (let i = 0; i < listeDateRapport.length; i++) {
     listeDateRapport[i].addEventListener('input', verifDateRapport);
 }
+var dateFinFormation = document.getElementsByName("dateFin");
+dateFinFormation[0].addEventListener("input",verifDateFin);
