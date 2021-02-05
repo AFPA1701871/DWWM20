@@ -24,8 +24,8 @@ INSERT INTO `periodesstages` (`idPeriode`, `idSessionFormation`, `dateDebutPAE`,
 
 
 INSERT INTO `stagiaires`(`idStagiaire`, `genreStagiaire`, `nomStagiaire`, `prenomStagiaire`, `numSecuStagiaire`, `numBenefStagiaire`, `dateNaissanceStagiaire`, `emailStagiaire`, `adresse`, `idVilleHabitation`, `idVilleNaissance`, `TelStagiaire`) VALUES (1, 'H', 'dwOne', 'dwOne', '1211121111222', '12345678', '1995-02-01', 'dwone@gmail.com',"rue des champignons",12,12,"0123456789"),
-(2, 'M', 'dwTwo', 'dwTwo', '1230212123123', '45678945', '1996-02-01', 'dwtwo@gmail.com',"rue des champignons",12,12,"0123456789"),
-(3, 'M', 'dwThree', 'dwThree', '1451212456456', '12345654', '2025-02-01', 'dwthree@gmail.com',"rue des champignons",12,12,"0123456789");
+(2, 'M', 'dwTwo', 'dwTwo', '1230212123123', '45678945', '1996-02-01', 'dwtwo@gmail.com',"rue des champignons",12,"ville","0123456789"),
+(3, 'M', 'dwThree', 'dwThree', '1451212456456', '12345654', '2025-02-01', 'dwthree@gmail.com',"rue des champignons",12,"ville","0123456789");
 
 
 INSERT INTO `participations` (`idParticipation`, `idSessionFormation`, `idStagiaire`,dateDebut,dateFin) VALUES

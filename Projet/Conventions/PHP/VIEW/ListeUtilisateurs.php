@@ -6,7 +6,7 @@ echo '<section class="colonne">
 
 
     <div class="centre"> 
-    <h1>Sélectionner un rôle pour filtrer :</h1>
+    <h1 class="texteClair">Sélectionner un rôle pour filtrer :</h1>
     </div>
     <div>
         <div id="admin" class="bouton">Administrateurs</div><div></div>
