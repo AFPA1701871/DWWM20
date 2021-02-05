@@ -83,7 +83,7 @@ CREATE TABLE Stagiaires(
         adresse Varchar (100) NOT NULL,
         idVilleHabitation int(5) NOT NULL,
         idVilleNaissance int(5) NOT NULL,
-        TelStagiaire Varchar (10) NOT NULL,
+        telStagiaire Varchar (10) NOT NULL,
         UNIQUE KEY `email` (`emailStagiaire`) 
 )ENGINE=InnoDB, CHARSET = UTF8;
 

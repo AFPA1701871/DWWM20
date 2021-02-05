@@ -133,7 +133,7 @@ else
                     <input type="hidden" name="idPeriode" value="' . $ListePeriodeStage[$indice]->getIdPeriode() . '">
                 <div>
                     <div class="info  center">
-                        <a href="index.php?page=FormFRStagiaire" class="bouton"><i class="far fa-arrow-alt-circle-left"></i> Retour</a>
+                        <a href="index.php?page=FormFRStagiaire" class="bouton"><i class="far fa-arrow-alt-circle-left"></i>  &nbsp Retour</a>
                         <button class="bouton" type="submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
                     </div>
                 </div>

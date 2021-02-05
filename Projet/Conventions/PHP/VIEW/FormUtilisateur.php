@@ -164,7 +164,7 @@ if(isset($_GET["id"]))
                     {
                         case "ajouter":
                         {
-                            echo'<button id="submit" class="bouton" type="submit" disabled><i class="fas fa-paper-plane"></i> Ajouter</button>';
+                            echo'<button id="submit" class="bouton" type="submit" disabled><i class="fas fa-paper-plane"></i> &nbsp Ajouter</button>';
                             break;
                         }
                         case "modifier":

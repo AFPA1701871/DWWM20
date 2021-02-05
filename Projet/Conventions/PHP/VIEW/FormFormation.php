@@ -59,7 +59,7 @@ switch($mode)
     }
 }
 echo'<div class="demi"></div>';
-echo'<a href="Index.php?page=ListeFormations"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i> Retour</button></a>';
+echo'<a href="Index.php?page=ListeFormations"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i>  &nbsp Retour</button></a>';
 ?>
 <div></div>
 </div>
