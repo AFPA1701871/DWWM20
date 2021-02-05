@@ -43,7 +43,6 @@ INSERT INTO `tuteurs` (`idTuteur`, `nomTuteur`, `prenomTuteur`, `fonctionTuteur`
 
 
 INSERT INTO `utilisateurs` (`idUtilisateur`, `nomUtilisateur`, `prenomUtilisateur`, `emailUtilisateur`, `mdpUtilisateur`, `datePeremption`, `idRole`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 'admin', NULL, 1),
 (2, 'POIX', 'Martine', 'martine.poix@gmail.com', 'Az1+1111', '2099-01-01', 2),
 (3, 'dwOne', 'dwOne', 'dwone@gmail.com', 'dwOnedwOne12345678', '2021-06-05', 4),
 (4, 'dwTwo', 'dwTwo', 'dwtwo@gmail.com', 'dwTwodwTwo45678945', '2021-06-05', 4),

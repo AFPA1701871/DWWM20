@@ -256,6 +256,7 @@ for (let i = 0; i < lesLabels.length; i++) {
 function clickLabel(e) {
     check = e.target.parentNode.querySelector("input");
     check.checked = !check.checked;
+    //declenche l'evenement click de la checkbox
     check.dispatchEvent(new Event("click"));
 }
 

@@ -189,8 +189,6 @@ CREATE TABLE Animations
 CREATE TABLE Participations
 (
     idParticipation INT Auto_increment NOT NULL PRIMARY KEY,
-    dateDebut DATE NOT NULL, 
-    dateFin DATE NOT NULL,
     idSessionFormation INT NOT NULL, 
     idStagiaire INT NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;  
