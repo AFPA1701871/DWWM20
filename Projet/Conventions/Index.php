@@ -39,6 +39,10 @@ $routes=[
 	"FormFRCondition" => ["PHP/VIEW/", "FormFRCondition", "Fiche de renseignements",false],
 	"FormFREvaluation" => ["PHP/VIEW/", "FormFREvaluation", "Fiche de renseignements",false],
 	"ActionFormFRStagiaire" => ["PHP/VIEW/", "ActionFormFRStagiaire", "Fiche de renseignements",false],
+	"ActionFormFREntreprise" => ["PHP/VIEW/", "ActionFormFREntreprise", "Fiche de renseignements",false],
+	"ActionFormFRSujetStage" => ["PHP/VIEW/", "ActionFormFRSujetStage", "Fiche de renseignements",false],
+	"ActionFormFRCondition" => ["PHP/VIEW/", "ActionFormFRCondition", "Fiche de renseignements",false],
+	"ActionFormFREvaluation" => ["PHP/VIEW/", "ActionFormFREvaluation", "Fiche de renseignements",false],
 	"ChoixStagiaireTuteur" => ["PHP/VIEW/", "ChoixStagiaireTuteur", "Choisissez le Stagiaire :",false],
 	"FormFRInfosStagiaire" => ["PHP/VIEW/", "FormFRInfosStagiaire", "Identification",false],
 	

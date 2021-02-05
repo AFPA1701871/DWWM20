@@ -71,7 +71,7 @@ if ($mode === "ajout") {
                 </div>';
 } else {
     if ($mode == "delete" || $mode == "detail") {
-        echo '<div class="titre grande ">' . $idForma->getLibelleFormation() . '</div><div></div> </div>';
+        echo '<div class="texteClair grande ">' . $idForma->getLibelleFormation() . '</div><div></div> </div>';
         $disabled = " disabled ";
     } else {/** mode modif */
         echo '<div class="grande"><select id="select" class="relatif" name="idFormation">';

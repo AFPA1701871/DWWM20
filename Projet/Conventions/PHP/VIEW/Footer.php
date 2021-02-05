@@ -15,8 +15,8 @@ if (isset($page))
         </script><script src="./JS/MenuFR.js"></script>';break;
         case "FormFRInfosStagiaire" : echo '<script src="./JS/MenuFR.js"></script>';break;
         case "FormFRSujetStage" : echo '<script src="./JS/MenuFR.js"></script>';break;
-        case "FormFRCondition" : echo '<script src="./JS/MenuFR.js"></script>';break;
-        case "FormFREvaluation" : echo '<script src="./JS/MenuFR.js"></script>';break;
+        case "FormFRCondition" : echo '<script src="./JS/MenuFR.js"></script><script src="./JS/VerifFormFRCondition.js"></script>';break;
+        case "FormFREvaluation" : echo '<script src="./JS/MenuFR.js"></script><script src="./JS/VerifFormFREvaluation.js"></script>';break;
         case "ListeUtilisateurs" : echo '<script src="./JS/FiltreUtilisateurs.js"></script>';break;
         case "FormStagiaire" : echo '<script src="./JS/VerifFormStagiaire.js"></script>';break;
         case "FormUtilisateur" : echo '<script src="./JS/VerifFormUtilisateur.js"></script>';break;
