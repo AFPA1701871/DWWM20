@@ -96,7 +96,7 @@ CREATE TABLE Formations(
         idFormation      Int  Auto_increment  NOT NULL PRIMARY KEY,
         libelleFormation Varchar (200) NOT NULL,
         grn int(4) NOT NULL,
-        finaliteFormation int(1) NOT NULL
+        finaliteFormation Varchar (250) NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
