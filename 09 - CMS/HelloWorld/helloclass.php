@@ -44,5 +44,6 @@ class HelloClass{
 		// on definit les elements de parametrage
 		//on crée 1 entree dans la table Wp_options
 		register_setting('helloworld_settings', 'helloworld_couleur');
+		register_setting('helloworld_settings', 'helloworld_size');
 	}
 }
