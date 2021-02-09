@@ -66,6 +66,7 @@ class UtilisateursManager
 		}
 		return $liste;
 	}
+	
 
 	public static function findByEmail($email)// recherche per pseudo utilisateur
     {

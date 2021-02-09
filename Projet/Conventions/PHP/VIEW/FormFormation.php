@@ -21,7 +21,7 @@ switch($mode)
         break;
     }
 }
-
+$idUtilisateur="";
 if (isset($_GET["id"]))
 {
     if($mode !="ajouter")
@@ -40,7 +40,6 @@ if (isset($_GET["id"]))
     }
 }
 ?>
-
 <div class="espaceHor"></div>
 <div class="colonne">
     <input name="idFormation" type="hidden" <?php if(isset($obj)) echo'value="'.$obj->getIdFormation().'"';?>>
@@ -49,7 +48,7 @@ if (isset($_GET["id"]))
         <input class="double" name="libelleFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getLibelleFormation().'"';if($mode=="supprimer")echo'disabled';?>>
     </div>
     <div class="info">
-        <label class="double" for="grn">grn</label>
+        <label class="double" for="grn">GRN</label>
         <input class="double" name="grn" <?php if($mode != "ajouter") echo'value="'.$obj->getGrn().'"';if($mode=="supprimer")echo'disabled';?>>
     </div>
 
@@ -63,11 +62,12 @@ echo '<div class="info">
         <label class="double" for="idUtilisateur">Formateur</label>';
         if($mode!="ajouter"){echo'<input type="hidden" name="idAncienUtilisateur" value="' .$idUtilisateur.'">';} 
 ?>
+<input type="hidden" name="utilisateur" value="">
 <select class="double" id="selectUtilisateur" name="idUtilisateur" multiple <?php if($mode=="supprimer")echo'disabled';?>>
 <?php
 $sel="";
     
-$liste = UtilisateursManager::getList();
+$liste = UtilisateursManager::getListByRole(2);
 foreach($liste as $elt)
 {           
     if($elt->getIdUtilisateur()== $idUtilisateur)
