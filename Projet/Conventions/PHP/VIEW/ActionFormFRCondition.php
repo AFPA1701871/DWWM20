@@ -30,12 +30,12 @@ for ($i = 1; $i < 4; $i++)
 {
     if (isset($_POST["lieuRealisation" . $i]))
     {
-        $lieuRealisation = $lieuRealisation . $_POST["lieuRealisation" . $i] . ", ";
+        $lieuRealisation = $lieuRealisation . $_POST["lieuRealisation" . $i] . ",";
     }
 }
 if (isset($_POST["lieuRealisation5"]) && $_POST["lieuRealisation5"] != "")
 {
-    $lieuRealisation = $lieuRealisation . $_POST["lieuRealisation5"];
+    $lieuRealisation = $lieuRealisation . "autre".$_POST["lieuRealisation5"];
 }
 else
 {

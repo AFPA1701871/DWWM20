@@ -14,6 +14,14 @@ for (let i = 0; i < lesHeures.length; i++) {
         lesHeures[i].addEventListener("input", duppliqueHeure);
     }
 }
+/* Lancer les calculs si le formulaire est plein */
+if (document.getElementsByName("idStage")[0].value !="")
+{
+    for (let i = 1; i < 7; i++) {
+        calculDuree(i)
+    }
+}
+
 
 /* Verifier la cohérence de heures saisies */
 function verifCoherence(e) {
@@ -173,8 +181,8 @@ function cocherAutre(e) {
 /* Vérifier qu'au moins une checkbox est cochée */
 function verifCheck() {
     tabCheck = [];
-    lesGroupes = document.querySelectorAll("div[groupe]");
-    nbGroupe = document.querySelector("input[preciser=ok]").checked?lesGroupes.length:lesGroupes.length-1;
+    lesGroupes = document.querySelectorAll("div[groupe=ok]");
+    nbGroupe = lesGroupes.length;
     for (let i = 0; i < nbGroupe; i++) {
         lesChecks = lesGroupes[i].querySelectorAll("input[type=checkBox]");
         if (lesChecks.length == 0)
@@ -267,9 +275,31 @@ for (let i = 0; i < lesTravaux.length; i++) {
 }
 
 function cacheTravaux(e) {
+    monGroupe = document.querySelector("div[preciser]");
     if (e.target.getAttribute("preciser") == "ok") {
-        document.querySelector("div[preciser]").classList.remove("cache");
+        monGroupe.classList.remove("cache");
+        monGroupe.querySelector("div[groupe]").setAttribute("groupe","ok");
     } else {
-        document.querySelector("div[preciser]").classList.add("cache");
+        monGroupe.classList.add("cache");
+        monGroupe.querySelector("div[groupe]").setAttribute("groupe","ko");
+    }
+}
+/* demander les precisions sur deplacement */
+lesDeplacements = document.querySelectorAll("input[deplacement]");
+for (let i = 0; i < lesDeplacements.length; i++) {
+    lesDeplacements[i].addEventListener("click", cacheDeplacement);
+}
+
+function cacheDeplacement(e) {
+    monGroupe = document.querySelector("div[deplacement]");
+    if (e.target.getAttribute("deplacement") == "ok") {
+        monGroupe.classList.remove("cache");
+        monGroupe.querySelectorAll("div[groupe]")[0].setAttribute("groupe","ok");
+        monGroupe.querySelectorAll("div[groupe]")[1].setAttribute("groupe","ok");
+    } else {
+        monGroupe.classList.add("cache");
+        monGroupe.querySelectorAll("div[groupe]")[0].setAttribute("groupe","ko");
+        monGroupe.querySelectorAll("div[groupe]")[1].setAttribute("groupe","ko");
+  
     }
 }
