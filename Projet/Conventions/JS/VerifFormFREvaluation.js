@@ -36,48 +36,28 @@ function verification(event) { // fonction permettant de vérifier la validité 
 }
 
 
-function verifRadio(event) {
-    verification();
-}
 
-function AjoutEvenement() {
-    var libAcquis = document.getElementsByClassName("libelle");
-    var libRadio = document.getElementsByClassName("radio");
-    for (let i = 0; i < libAcquis.length; i++) {
-        libAcquis[i].addEventListener("input", verification);
-    }
 
-    for (let i = 0; i < libRadio.length; i++) {
-        libRadio[i].addEventListener("input", verification);
-    }
-}
 
 function creerLigne(nb) {
 
     var divContenu = document.createElement("div");
+    
+    divContenu.setAttribute("class", "info");
     row.appendChild(divContenu);
 
-    var divEspace = document.createElement("div");
-    divEspace.setAttribute("class", "mini");
-    divContenu.appendChild(divEspace);
-
-    // inputs type texte
-    var divNeutre = document.createElement("div");
-    divNeutre.setAttribute("class", "info colonne");
-    divContenu.appendChild(divNeutre);
-
     var libelleA = document.createElement("div");
-    libelleA.setAttribute("class", "blanc centre");
-    divNeutre.appendChild(libelleA);
+    // libelleA.setAttribute("class", "blanc centre");
+    divContenu.appendChild(libelleA);
 
     var libelleAcquis = document.createElement("input");
     libelleAcquis.setAttribute("type", "texte");
-    libelleAcquis.setAttribute("class", "libelle");
     libelleAcquis.setAttribute("pattern", "^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$");
-    libelleAcquis.setAttribute("name", "libelleAcquis_" + nb)
+    libelleAcquis.setAttribute("name", "libelleAcquis_" + nb);
+    libelleAcquis.addEventListener("input",verification);
     libelleA.appendChild(libelleAcquis);
 
-    AjoutEvenement();
+    
 
     // inputs type radio
     var divNeutreDeux = document.createElement("div");
@@ -153,21 +133,11 @@ function creerLigne(nb) {
 }
 
 // Les Inputs
-var ponctualite = document.getElementById("ponctualite");
-var presentation = document.getElementById("presentation");
-var adaptation = document.getElementById("adaptation");
-var relationPro = document.getElementById("relationPro");
-var communication = document.getElementById("commuication");
-var tacheAutonome = document.getElementById("tacheAutonome");
-var respectConsigne = document.getElementById("respectConsigne");
-var respectMateriel = document.getElementById("respectMateriel");
-var agir = document.getElementById("agir");
-var respectCritere = document.getElementById("respectCritere");
-var respectHygiene = document.getElementById("respectHygiene");
+
 var row = document.getElementById("test");
 var valider = document.getElementById("valide");
 var nbLignes = 1;
 
 var listeInputs = document.getElementsByTagName("input");
-
+console.log(listeInputs);
 creerLigne(nbLignes); // permet de creer une ligne au moins une fois
