@@ -11,7 +11,7 @@ for (let i = 0; i < lesHeures.length; i++) {
     lesHeures[i].addEventListener("input", verifCoherence);
     /* si la saisie est le lundi, on déclenche le dupplique */
     if (lesHeures[i].name.substring(lesHeures[i].name.length - 1) == 1) {
-        lesHeures[i].addEventListener("input", duppliqueHeure);
+        lesHeures[i].addEventListener("blur", duppliqueHeure);
     }
 }
 /* Lancer les calculs si le formulaire est plein */
@@ -88,29 +88,26 @@ function calculDuree(numJour) {
         if (inputString.classList.contains("rouge"))
             inputErreur[i] = -1;
     }
-    if (inputErreur.indexOf(-1) == -1) // pas d'erreur sur la journée
-    {
-        matin = 0;
-        aprem = 0;
-        if (inputErreur[0] == 1 && inputErreur[1] == 1) {
-            matin = inputHeure[1] - inputHeure[0];
-        }
-        if (inputErreur[2] == 1 && inputErreur[3] == 1) {
-            aprem = inputHeure[3] - inputHeure[2];
-        }
-        total = matin + aprem;
-        if (total > 0) {
-            heure = parseInt(total / 1000 / 60 / 60)
-            minute = (total - heure * 60 * 60 * 1000) / 1000 / 60
-            heure = heure < 10 ? "0" + heure : heure
-            minute = minute < 10 ? "0" + minute : minute
-
-            document.getElementsByName("duree" + numJour)[0].innerHTML = heure + ":" + minute
-
-        }
-    } else { //il y a une erreur
-        document.getElementsByName("duree" + numJour)[0].innerHTML = "";
+  
+    matin = 0;
+    aprem = 0;
+    if (inputErreur[0] == 1 && inputErreur[1] == 1) {
+        matin = inputHeure[1] - inputHeure[0];
     }
+    if (inputErreur[2] == 1 && inputErreur[3] == 1) {
+        aprem = inputHeure[3] - inputHeure[2];
+    }
+    total = matin + aprem;
+    if (total > 0) {
+        heure = parseInt(total / 1000 / 60 / 60)
+        minute = (total - heure * 60 * 60 * 1000) / 1000 / 60
+        heure = heure < 10 ? "0" + heure : heure
+        minute = minute < 10 ? "0" + minute : minute
+
+        document.getElementsByName("duree" + numJour)[0].innerHTML = heure + ":" + minute
+
+    }
+    
     calculSemaine();
 }
 
@@ -131,7 +128,7 @@ function calculSemaine() {
     heure = heure < 10 ? "0" + heure : heure
     minute = minute < 10 ? "0" + minute : minute
     dureeHebdo.innerHTML = heure + ":" + minute
-    if (heure < 35 || heure > 37 || (heure == 37 && minute > 00)) {
+    if (heure < 30 || heure > 35 || (heure == 35 && minute > 00)) {
         dureeHebdo.classList.add("rouge");
         dureeHebdo.previousElementSibling.classList.add("rouge");
     } else {

@@ -39,7 +39,7 @@ if (isset($_POST["lieuRealisation5"]) && $_POST["lieuRealisation5"] != "")
 }
 else
 {
-    $lieuRealisation = substr($lieuRealisation, 0, strlen($lieuRealisation) - 2);
+    $lieuRealisation = substr($lieuRealisation, 0, strlen($lieuRealisation) - 1);
 }
 
 // gerer le deplacement oui ou non !
