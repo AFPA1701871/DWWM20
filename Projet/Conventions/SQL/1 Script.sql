@@ -82,7 +82,7 @@ CREATE TABLE Stagiaires(
         emailStagiaire Varchar (50) NOT NULL,
         adresse Varchar (100) NOT NULL,
         idVilleHabitation int(5) NOT NULL,
-        VilleNaissance Varchar(100) NOT NULL,
+        villeNaissance Varchar(100) NOT NULL,
         telStagiaire Varchar (10) NOT NULL,
         UNIQUE KEY `email` (`emailStagiaire`) 
 )ENGINE=InnoDB, CHARSET = UTF8;
@@ -403,10 +403,6 @@ ADD CONSTRAINT FK_Stagiaires_VillesHabitation
 FOREIGN KEY (idVilleHabitation)
 REFERENCES Villes(idVille);
 
-ALTER TABLE Stagiaires
-ADD CONSTRAINT FK_Stagiaires_VillesNaissance
-FOREIGN KEY (idVilleNaissance)
-REFERENCES Villes(idVille);
 
 CREATE VIEW  stagiaireFormation as
 SELECT
