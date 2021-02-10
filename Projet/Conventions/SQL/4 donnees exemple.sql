@@ -48,4 +48,4 @@ INSERT INTO `animations` (`idAnimation`, `idUtilisateur`, `idFormation`) VALUES
 
 
 INSERT INTO `stages` (`idStage`, `etape`, `dateVisite`, `nomVisiteur`, `lieuRealisation`, `deplacement`, `frequenceDeplacement`, `modeDeplacement`, `attFormReglement`, `libelleAttFormReg`, `visiteMedical`, `travauxDang`, `dateDeclarationDerog`, `sujetStage`, `travauxRealises`, `objectifPAE`, `dateDebut`, `dateFin`, `idTuteur`, `idStagiaire`, `idPeriode`) VALUES
-(1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2021-02-15', '2021-05-14', 1, 1, 1);
+(1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2021-02-15', '2021-05-14', 1, 1, 1);

@@ -9,28 +9,28 @@ function clickAcquis(e) { // fonction permettant de créer une ligne si l'une de
 
 function validation() { // fonction permettant d'interdir l'envoie des données tant que les champs ne sont pas valide
     valider.disabled = false;
-    for (let i = 0; i < listeInputs.length; i++) {
+    /* Verif des inputs texte */
+    var listeInputs = document.querySelectorAll("input[aVerifier]");
+    for (let i = 0; i < nbLignes-2; i++) {
         let input = listeInputs[i];
         if (input.value == "") {
             valider.disabled = true;
         }
     }
+    /* Verif des inputs radio */
+    var lesRadios=document.querySelectorAll("input[type=radio]");
+   
+
 }
 
 function verification(event) { // fonction permettant de vérifier la validité des différents champs
-    // if (event.target.getAttribute("type") == "text") {
-    //     var ligne = event.target.parentNode.parentNode.parentNode; // pour l'input texte
-    // } else {
-    //     var ligne = event.target.parentNode.parentNode.parentNode.parentNode; // pour le radio bouton
-    // }
-
     var monInput = event.target;
     if (monInput.value == '') {
         monInput.style.border = "2px solid orange";
     } else if (!monInput.checkValidity()) {
-        monInput.style.class = "incorrect";
+        monInput.classList.add("incorrect");
     } else {
-        monInput.style.border = "1px solid var(--BordureBouton)";
+        monInput.classList.remove("incorrect");
     }
     validation();
 }
@@ -54,6 +54,7 @@ function creerLigne(nb) {
     libelleAcquis.setAttribute("type", "texte");
     libelleAcquis.setAttribute("pattern", "^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$");
     libelleAcquis.setAttribute("name", "libelleAcquis_" + nb);
+    libelleAcquis.setAttribute("aVerifier", "ok" );
     libelleAcquis.addEventListener("input",verification);
     libelleA.appendChild(libelleAcquis);
 
@@ -138,6 +139,5 @@ var row = document.getElementById("test");
 var valider = document.getElementById("valide");
 var nbLignes = 1;
 
-var listeInputs = document.getElementsByTagName("input");
-console.log(listeInputs);
+
 creerLigne(nbLignes); // permet de creer une ligne au moins une fois
