@@ -2,7 +2,7 @@
 
 
 INSERT INTO `entreprises` (`idEntreprise`, `raisonSociale`, `statutJuridiqueEnt`, `adresseEnt`, `numSiretEnt`, `telEnt`, `assureurEnt`, `numSocietaire`, `nomRepresentant`, `prenomRepresentant`, `fctRepresentant`, `telRepresentant`, `mailRepresentant`, `idVille`) VALUES
-(1, 'Pellentesque Habitant Morbi Institute', 'EURL', '12 Rue des champignons', '12345678901234', '0123456789', 'Et Malesuada Limited', '123', 'Repres', 'repres', 'DG', '0123456789', 'repres@gmail.com', 11560);
+(1, 'Pellentesque Habitant Morbi Institute', 'EURL', '12 Rue des champignons', '12345678901234', '0123456789', 'Et Malesuada Limited', '123', 'Repres', 'repres', 'DG', '0123456789', 'repres@gmail.com', 11560),(2, 'Ligula Limited', 'SARL', '12 Rue des champignons', '47906057600002', '0102030405', 'Duis Company', '456', 'RepresTwo', 'represTwo', 'DG', '0123456789', 'represe@gmail.com', 11560);
 
 
 
