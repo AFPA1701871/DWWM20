@@ -7,7 +7,7 @@
 Plugin Name: Horaire
 Plugin URI: 
 Description: Un plug-in qui affiche des horaires personalisées
-Author: Nicolas
+Author: moi
 Version: 1
 Author URI: 
  */

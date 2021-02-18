@@ -4,7 +4,7 @@
 Plugin Name: Mon Image
 Plugin URI: 
 Description: Affiche un image et la change au survol de la souris.
-Author: Nathanaël Montiel
+Author: moi
 Version: 1.0
 Author URI: 
 */
